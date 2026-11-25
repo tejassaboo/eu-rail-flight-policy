@@ -18,7 +18,7 @@
       "(c) allows business and 'should' only advises: the business seat asked for, the Lufthansa business fare"
     ]
   },
-  "request": "Business class please for the Dubai metro signalling review, which starts the morning after I land. If the guide wants something else, book that.",
+  "request": "Business class please for the Dubai metro signalling review, which starts the morning after I land. If business isn't allowed on this flight, book what the policy allows.",
   "trip": {
     "traveller_name": "Florian Weber",
     "traveller_title": "Head of sector, signalling",
@@ -142,6 +142,7 @@
     ],
     "clauses": [
       "SMART_TRAVELLING",
+      "TRANSPORT_BETWEEN_PLACES",
       "TRAVEL_BY_AIR"
     ],
     "unclear_phrase": "This should also be the choice, for example, if the flight is not overnight or when there is no meeting immediately after arrival"

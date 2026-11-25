@@ -54,7 +54,7 @@
         "role": "CABINET",
         "name": "Head of the Commissioner's Cabinet",
         "subject": "SAME_CLASS_REQUEST",
-        "note": "Written request: the adviser travels in the Commissioner's class to brief her on the flight; the reasons are set out in the mission order"
+        "note": "Written request: the adviser travels in the Commissioner's class to brief her on the flight; the reasons are set out in the mission order, which the authorising officer has signed"
       }
     ]
   },
@@ -131,6 +131,7 @@
       "NONE"
     ],
     "clauses": [
+      "TRANSPORT_BETWEEN_PLACES",
       "TRAVEL_BY_AIR"
     ],
     "unclear_phrase": ""

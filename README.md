@@ -59,7 +59,7 @@ methods at 35% budget or less fit.
 | `birch-lantern` | easy | BOOK (iberia-am-economy; ECONOMY) | LOWEST_FARE or LOYALTY_PROGRAM_PREFERENCE | 688-691, 407, 663-664 |
 | `cedar-mosaic` | easy | BOOK (airfrance-business; BUSINESS) | INTERNATIONAL_LONG_FLIGHT or LONG_FLIGHT_APPROVED | 707-710, 665-668 |
 | `dune-orchard` | easy | BOOK (iberia-premium; PREMIUM_ECONOMY) | PREMIUM_ECONOMY_ALLOWED | 707-710 |
-| `elm-sounding` | easy | BOOK (direct-economy; ECONOMY) | ALTERNATE_ROUTE_WITHIN_MARGIN or DIRECT_FLIGHT_NORM | 684-687, 663-664, 688-691 |
+| `elm-sounding` | easy | BOOK (direct-economy; ECONOMY) | ALTERNATE_ROUTE_WITHIN_MARGIN, DIRECT_FLIGHT_NORM or LOWEST_FARE | 684-687, 663-664, 688-691 |
 | `fern-ledger` | easy | BOOK (morning-flex; ECONOMY) | FLEXIBLE_FARE_JUSTIFIED or LOWEST_FARE | 704-706, 688-691 |
 | `garnet-reach` | boundary_twin | BOOK (morning-business; BUSINESS) | INTERNATIONAL_LONG_FLIGHT or LONG_FLIGHT_APPROVED | 707-710, 665-668 |
 | `heron-cobble` | boundary_twin | BOOK (afternoon-economy; ECONOMY) | LONG_FLIGHT_CONDITION_NOT_MET or UPGRADE_NOT_ELIGIBLE | 707-710, 688-691, 663-664 |

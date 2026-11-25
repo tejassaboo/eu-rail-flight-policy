@@ -132,7 +132,8 @@
     ],
     "reason_codes": [
       "ALTERNATE_ROUTE_WITHIN_MARGIN",
-      "DIRECT_FLIGHT_NORM"
+      "DIRECT_FLIGHT_NORM",
+      "LOWEST_FARE"
     ],
     "approvers": [
       "AUTHORISING_OFFICER",

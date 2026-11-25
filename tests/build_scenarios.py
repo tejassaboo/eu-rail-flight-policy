@@ -159,7 +159,7 @@ def scenario(id, category, overlays, request, trip_, search_spec, exp, must_keep
 BOOKED = ["AUTHORISING_OFFICER", "LINE_MANAGER", "NONE"]
 LOW_CLAUSES = ["TRANSPORT_BETWEEN_PLACES", "TRAVEL_BY_AIR"]
 NOT_ELIGIBLE = ["LONG_FLIGHT_CONDITION_NOT_MET", "UPGRADE_NOT_ELIGIBLE"]
-DECLINED_CLAUSES = ["SMART_TRAVELLING", "TRAVEL_BY_AIR"]
+DECLINED_CLAUSES = ["SMART_TRAVELLING", "TRANSPORT_BETWEEN_PLACES", "TRAVEL_BY_AIR"]
 LONG_OK = ["INTERNATIONAL_LONG_FLIGHT", "LONG_FLIGHT_APPROVED"]
 UNCLEAR_ROLES = ["AUTHORISING_OFFICER", "NOT_NAMED"]
 UNCLEAR_REASONS = ["APPROVAL_REQUIRED", "UNCLEAR_POLICY_TEXT"]
@@ -344,7 +344,7 @@ scenario(
         offer("emirates-economy", "emirates", "ECONOMY", 58500),
         offer("emirates-business", "emirates", "BUSINESS", 314000),
     ]),
-    expected("BOOK", ["airfrance-business"], ["BUSINESS"], LONG_OK, BOOKED, ["TRAVEL_BY_AIR"]),
+    expected("BOOK", ["airfrance-business"], ["BUSINESS"], LONG_OK, BOOKED, ["TRANSPORT_BETWEEN_PLACES", "TRAVEL_BY_AIR"]),
     [TIER_C, PREMIUM_FIRST],
     "Both nonstops fly 395-405 minutes, a segment of at least five hours' continuous flying (lines 707-710), so "
     "business may be booked at the lowest rate: Air France at EUR 2,890. No premium economy is sold on these flights, "
@@ -369,7 +369,7 @@ scenario(
         offer("american-premium", "american", "PREMIUM_ECONOMY", 114000),
         offer("american-business", "american", "BUSINESS", 390000),
     ]),
-    expected("BOOK", ["iberia-premium"], ["PREMIUM_ECONOMY"], ["PREMIUM_ECONOMY_ALLOWED"], BOOKED, ["TRAVEL_BY_AIR"]),
+    expected("BOOK", ["iberia-premium"], ["PREMIUM_ECONOMY"], ["PREMIUM_ECONOMY_ALLOWED"], BOOKED, ["TRANSPORT_BETWEEN_PLACES", "TRAVEL_BY_AIR"]),
     [TIER_C],
     "Both nonstops fly 440-450 minutes, so premium economy may be booked (lines 707-710): the cheapest premium economy "
     "fare, Iberia at EUR 1,090.")
@@ -391,7 +391,7 @@ scenario(
         offer("direct-economy", "direct", "ECONOMY", 18200),
         offer("frankfurt-economy", "frankfurt", "ECONOMY", 16100),
     ]),
-    expected("BOOK", ["direct-economy"], ["ECONOMY"], ["ALTERNATE_ROUTE_WITHIN_MARGIN", "DIRECT_FLIGHT_NORM"], BOOKED,
+    expected("BOOK", ["direct-economy"], ["ECONOMY"], ["ALTERNATE_ROUTE_WITHIN_MARGIN", "DIRECT_FLIGHT_NORM", "LOWEST_FARE"], BOOKED,
              ["SMART_TRAVELLING", "TRANSPORT_BETWEEN_PLACES", "TRAVEL_BY_AIR"]),
     [DIRECT, SHORT_AIR, TIER_A],
     "Direct flights are the norm (lines 684-687) and are favoured within reasonable cost variations (40%, lines "
@@ -430,7 +430,7 @@ def doha_trip(name):
 
 scenario(
     "garnet-reach", "boundary_twin", ["dearer_option"], DOHA_REQUEST, doha_trip("Giulia Ferri"), doha(300),
-    expected("BOOK", ["morning-business"], ["BUSINESS"], LONG_OK, BOOKED, ["TRAVEL_BY_AIR"]),
+    expected("BOOK", ["morning-business"], ["BUSINESS"], LONG_OK, BOOKED, ["TRANSPORT_BETWEEN_PLACES", "TRAVEL_BY_AIR"]),
     [TIER_C, PREMIUM_FIRST],
     "Each nonstop is scheduled at exactly 300 minutes: 'at least five-hours of continuous flying time' is inclusive "
     "(lines 707-710), so business may be booked at the lowest rate: Qatar 09:05 at EUR 2,240. No premium economy is "
@@ -520,7 +520,7 @@ def nairobi_trip(name):
 scenario(
     "maple-tern", "boundary_twin", ["multi_leg", "dearer_option"], NAIROBI_REQUEST, nairobi_trip("Nadia Okafor"),
     nairobi(300),
-    expected("BOOK", ["first-premium"], ["PREMIUM_ECONOMY"], ["PREMIUM_ECONOMY_ALLOWED"], BOOKED, ["TRAVEL_BY_AIR"]),
+    expected("BOOK", ["first-premium"], ["PREMIUM_ECONOMY"], ["PREMIUM_ECONOMY_ALLOWED"], BOOKED, ["TRANSPORT_BETWEEN_PLACES", "TRAVEL_BY_AIR"]),
     [TIER_C],
     "Both itineraries connect in Cairo: Paris-Cairo 260 minutes, Cairo-Nairobi 300 minutes. The journey 'includes at "
     "least one segment involving at least five-hours of continuous flying time' (lines 707-710), so premium economy may "
@@ -551,10 +551,11 @@ scenario(
          requested_cabin="BUSINESS", accompanies="MEMBER_OF_COMMISSION", accompanied_cabin="BUSINESS",
          sign_offs=[*order(), sign("CABINET", "Head of the Commissioner's Cabinet", "SAME_CLASS_REQUEST",
                                    "Written request: the adviser travels in the Commissioner's class to brief her on the "
-                                   "flight; the reasons are set out in the mission order")]),
+                                   "flight; the reasons are set out in the mission order, which the authorising "
+                                   "officer has signed")]),
     ministerial(),
     expected("BOOK", ["iberia-business"], ["BUSINESS"], ["SAME_CLASS_AS_MEMBER"],
-             ["AUTHORISING_OFFICER", "CABINET", "LINE_MANAGER", "MEMBER_OF_COMMISSION", "NONE"], ["TRAVEL_BY_AIR"]),
+             ["AUTHORISING_OFFICER", "CABINET", "LINE_MANAGER", "MEMBER_OF_COMMISSION", "NONE"], ["TRANSPORT_BETWEEN_PLACES", "TRAVEL_BY_AIR"]),
     [SAME_CLASS, TIER_C, SHORT_AIR],
     "A 105-110 minute flight allows only economy (lines 664, 707-710), but lines 711-714 let staff accompanying a Member "
     "of the Commission travel in the same class, on the written request of the Member or their Cabinet, with the "
@@ -700,7 +701,7 @@ scenario(
         offer("afternoon-economy", "afternoon", "ECONOMY", 16200),
     ]),
     expected("BOOK", ["midday-economy"], ["ECONOMY"], ["LOWEST_FARE"], ["AUTHORISING_OFFICER", "LINE_MANAGER", "NONE"],
-             ["MISSION_DEFINITION", "MISSION_ORDERS", "TRANSPORT_BETWEEN_PLACES", "TRAVEL_BY_AIR"]),
+             ["AUTHORISING_OFFICER_ROLE", "MISSION_DEFINITION", "MISSION_ORDERS", "TRANSPORT_BETWEEN_PLACES", "TRAVEL_BY_AIR"]),
     [ORDER_SIGNERS, LM_IS_AO, RESERVE, TIER_A],
     "Only the line manager has signed, but the record says the line manager is also the person who commits the budget: "
     "the authorising officer for commitments may be the same person as the line manager (lines 328 and footnote 15, "
@@ -883,7 +884,7 @@ scenario(
         offer("frankfurt-economy", "frankfurt", "ECONOMY", 17100),
     ]),
     expected("FLAG_FOR_APPROVAL", ["amsterdam-economy", "direct-economy"], ["ECONOMY"], UNCLEAR_REASONS, UNCLEAR_ROLES,
-             ["SMART_TRAVELLING", "TRAVEL_BY_AIR"], phrase="direct flights favoured when available, and within "
+             ["SMART_TRAVELLING", "TRANSPORT_BETWEEN_PLACES", "TRAVEL_BY_AIR"], phrase="direct flights favoured when available, and within "
              "reasonable cost variations (40%)"),
     [DIRECT, SHORT_AIR, TIER_A],
     "The Iberia nonstop at EUR 298 is 82% above the KLM connection at EUR 164. Lines 684-687 make direct flights the "
@@ -900,8 +901,8 @@ scenario(
 
 scenario(
     "ember-thimble", "flag", ["dearer_option", "unclear_phrase"],
-    "Business class please for the Dubai metro signalling review, which starts the morning after I land. If the guide "
-    "wants something else, book that.",
+    "Business class please for the Dubai metro signalling review, which starts the morning after I land. If business "
+    "isn't allowed on this flight, book what the policy allows.",
     trip(traveller_name="Florian Weber", traveller_title="Head of sector, signalling", place_of_employment="Munich",
          origin="MUC", destination="DXB", travel_date="2027-03-01", booking_date="2027-02-01",
          meeting_start_local="2027-03-02 09:00", purpose="Metro signalling review in Dubai", requested_cabin="BUSINESS"),
@@ -916,7 +917,7 @@ scenario(
         offer("emirates-business", "emirates", "BUSINESS", 315000),
     ]),
     expected("FLAG_FOR_APPROVAL", ["lufthansa-business", "lufthansa-premium"], ["BUSINESS", "PREMIUM_ECONOMY"],
-             UNCLEAR_REASONS, UNCLEAR_ROLES, ["SMART_TRAVELLING", "TRAVEL_BY_AIR"],
+             UNCLEAR_REASONS, UNCLEAR_ROLES, ["SMART_TRAVELLING", "TRANSPORT_BETWEEN_PLACES", "TRAVEL_BY_AIR"],
              phrase="This should also be the choice, for example, if the flight is not overnight or when there is no "
              "meeting immediately after arrival"),
     [TIER_C, PREMIUM_FIRST],
@@ -951,7 +952,7 @@ scenario(
         offer("evening-economy", "evening", "ECONOMY", 14600),
     ]),
     expected("FLAG_FOR_APPROVAL", ["midday-economy"], ["ECONOMY"], ["APPROVAL_REQUIRED", "MISSION_ORDER_NOT_SIGNED"],
-             ["AUTHORISING_OFFICER"], ["MISSION_DEFINITION", "MISSION_ORDERS"]),
+             ["AUTHORISING_OFFICER"], ["AUTHORISING_OFFICER_ROLE", "MISSION_DEFINITION", "MISSION_ORDERS"]),
     [ORDER_SIGNERS, RESERVE, RECOVER, TIER_A],
     "Only the line manager has signed, and the record says the line manager is not the person who commits the budget. "
     "If they are not the same person the mission order must also be signed by the authorising officer for commitments "

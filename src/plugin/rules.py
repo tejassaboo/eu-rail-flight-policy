@@ -313,7 +313,7 @@ def same_class(trip, seated):
     offered = in_cabin(seated, Cabin.BUSINESS)
     if not offered or any(over("long-segment", offer) for offer in offered):
         raise ValueError("a derogation where business is allowed anyway, or not sold, is not modelled")
-    return pick_of(cheapest(offered), [ReasonCode.SAME_CLASS_AS_MEMBER], [Clause.TRAVEL_BY_AIR],
+    return pick_of(cheapest(offered), [ReasonCode.SAME_CLASS_AS_MEMBER], [Clause.TRAVEL_BY_AIR, Clause.TRANSPORT_BETWEEN_PLACES],
                    "Lines 711-714: the Member's Cabinet asked in writing for the traveller to fly in the same class as "
                    "the Member they accompany, for reasons set out in the mission order, which is authorised: the "
                    "cheapest business fare. Without it, lines 664 and 689-691 would give economy (no segment of five "
@@ -325,7 +325,7 @@ def declined_upgrade(trip, seated, cabin_words):
     if base["unclear"]:
         raise ValueError("a declined upgrade on an unclear routing is not modelled")
     base["reasons"] = [ReasonCode.UPGRADE_NOT_ELIGIBLE, ReasonCode.LONG_FLIGHT_CONDITION_NOT_MET]
-    base["clauses"] = [Clause.TRAVEL_BY_AIR, Clause.SMART_TRAVELLING]
+    base["clauses"] = [Clause.TRAVEL_BY_AIR, Clause.SMART_TRAVELLING, Clause.TRANSPORT_BETWEEN_PLACES]
     base["why"] = (f"Lines 707-710 and 665: {cabin_words} only if the journey includes a segment of at least five hours' "
                    "continuous flying time (300 minutes), and no segment reaches it; line 664: economy class remains "
                    "the default. " + base["why"])
@@ -354,7 +354,8 @@ def business(trip, seated):
         if overnight or meeting_soon:
             raise ValueError("business against premium economy on an overnight flight or before a meeting is not "
                              "modelled")
-        pick = pick_of([*cheapest(premium_offers), *best], UNCLEAR_REASONS, [Clause.TRAVEL_BY_AIR, Clause.SMART_TRAVELLING],
+        pick = pick_of([*cheapest(premium_offers), *best], UNCLEAR_REASONS,
+                       [Clause.TRAVEL_BY_AIR, Clause.SMART_TRAVELLING, Clause.TRANSPORT_BETWEEN_PLACES],
                        "Lines 707-710: a segment of at least five hours allows 'premium economy class when suitable, or "
                        "business class'; lines 665-668: when business is allowed premium economy should be envisaged "
                        "when available, and 'should also be the choice' when the flight is not overnight or no meeting "
@@ -362,7 +363,8 @@ def business(trip, seated):
                        "the traveller asked for, which (c) allows: hold the premium economy fare or the business fare.")
         pick["unclear"] = PREMIUM_PHRASE
         return pick
-    return pick_of(best, [ReasonCode.LONG_FLIGHT_APPROVED, ReasonCode.INTERNATIONAL_LONG_FLIGHT], [Clause.TRAVEL_BY_AIR],
+    return pick_of(best, [ReasonCode.LONG_FLIGHT_APPROVED, ReasonCode.INTERNATIONAL_LONG_FLIGHT],
+                   [Clause.TRAVEL_BY_AIR, Clause.TRANSPORT_BETWEEN_PLACES],
                    "Lines 707-710 (c): the journey includes a segment of at least five hours' continuous flying time (300 "
                    "minutes or more), so business may be booked at the lowest rate; no premium economy is sold on it "
                    "(lines 665-666: 'when available'). The cheapest business fare.")
@@ -378,7 +380,8 @@ def premium(trip, seated):
         return declined_upgrade(trip, seated, "premium economy is allowed")
     if len(qualifying) != len(offered):
         raise ValueError("premium economy offers on both sides of the rule are not modelled")
-    return pick_of(cheapest(qualifying), [ReasonCode.PREMIUM_ECONOMY_ALLOWED], [Clause.TRAVEL_BY_AIR],
+    return pick_of(cheapest(qualifying), [ReasonCode.PREMIUM_ECONOMY_ALLOWED],
+                   [Clause.TRAVEL_BY_AIR, Clause.TRANSPORT_BETWEEN_PLACES],
                    "Lines 707-710 (c): the journey includes a segment of at least five hours' continuous flying time (300 "
                    "minutes or more), so premium economy may be booked at the lowest rate: the cheapest premium economy "
                    "fare.")
@@ -499,12 +502,15 @@ def direct_norm(pool, reasons, clauses, notes):
     if percent <= DIRECT_PERCENT:
         if ReasonCode.LOWEST_FARE not in reasons or len(reasons) != 1:
             raise ValueError("the direct-flight norm beside another booking reason is not modelled")
-        return pick_of(direct, [ReasonCode.DIRECT_FLIGHT_NORM, ReasonCode.ALTERNATE_ROUTE_WITHIN_MARGIN],
+        # Nothing the traveller asked for is declined, so the cheapest direct fare may also be given as the lowest.
+        return pick_of(direct, [ReasonCode.DIRECT_FLIGHT_NORM, ReasonCode.ALTERNATE_ROUTE_WITHIN_MARGIN,
+                                ReasonCode.LOWEST_FARE],
                        [*clauses, Clause.SMART_TRAVELLING],
                        "Lines 684-687: direct flights are the norm, and lines 663-664 favour them within reasonable cost "
                        "variations (40%); the direct flight costs less than 40% more than the cheapest connection, so "
                        "the cheapest direct flight.")
-    pick = pick_of([*low, *direct], UNCLEAR_REASONS, [Clause.TRAVEL_BY_AIR, Clause.SMART_TRAVELLING],
+    pick = pick_of([*low, *direct], UNCLEAR_REASONS,
+                   [Clause.TRAVEL_BY_AIR, Clause.SMART_TRAVELLING, Clause.TRANSPORT_BETWEEN_PLACES],
                    "Lines 684-687: direct flights are the norm, and only the authorising officer may refuse one that would "
                    "be a manifestly unreasonable expense; lines 663-664 favour direct flights 'within reasonable cost "
                    "variations (40%)' in a sentence about journeys up to 550 km. The direct flight costs more than 40% "
@@ -535,7 +541,8 @@ def gate(trip, pick):
     why = pick["why"]
     approvers = [*on_file(trip), *pick["approvers"]]
     if trip.line_manager_is_authorising_officer:
-        clauses += [Clause.MISSION_ORDERS, Clause.MISSION_DEFINITION]
+        # Footnote 15 hangs on section 1.2.4, the authorising officer's role.
+        clauses += [Clause.MISSION_ORDERS, Clause.MISSION_DEFINITION, Clause.AUTHORISING_OFFICER_ROLE]
         approvers.append(Approver.AUTHORISING_OFFICER)
         why += (" Lines 326-331 and footnote 15 (lines 273-275): the line manager, who signed, is also the authorising "
                 "officer for commitments, so the mission order is signed.")
@@ -553,7 +560,7 @@ def gate(trip, pick):
             raise ValueError("two missing sign-offs are not modelled")
         return answer(Decision.FLAG_FOR_APPROVAL, pick["offers"],
                       [ReasonCode.APPROVAL_REQUIRED, ReasonCode.MISSION_ORDER_NOT_SIGNED], [Approver.AUTHORISING_OFFICER],
-                      [Clause.MISSION_ORDERS, Clause.MISSION_DEFINITION],
+                      [Clause.MISSION_ORDERS, Clause.MISSION_DEFINITION, Clause.AUTHORISING_OFFICER_ROLE],
                       why + " But lines 328-331: the line manager is not the authorising officer, so the mission order "
                       "must also be signed by the authorising officer for commitments, and lines 426-437: tickets are "
                       "reserved only once they have signed (an unrefundable ticket bought without their approval may be "

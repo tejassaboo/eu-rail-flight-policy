@@ -140,6 +140,7 @@
     ],
     "clauses": [
       "SMART_TRAVELLING",
+      "TRANSPORT_BETWEEN_PLACES",
       "TRAVEL_BY_AIR"
     ],
     "unclear_phrase": ""

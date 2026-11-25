@@ -138,6 +138,7 @@
       "NONE"
     ],
     "clauses": [
+      "TRANSPORT_BETWEEN_PLACES",
       "TRAVEL_BY_AIR"
     ],
     "unclear_phrase": ""

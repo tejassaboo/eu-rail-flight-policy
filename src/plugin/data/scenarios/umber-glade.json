@@ -118,6 +118,7 @@
       "NONE"
     ],
     "clauses": [
+      "AUTHORISING_OFFICER_ROLE",
       "MISSION_DEFINITION",
       "MISSION_ORDERS",
       "TRANSPORT_BETWEEN_PLACES",
