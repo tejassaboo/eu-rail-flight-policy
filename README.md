@@ -1,5 +1,7 @@
 # EU Rail Guide to Missions Flight Booking
 
+**Source of the handbook:** https://rail-research.europa.eu/wp-content/uploads/2026/01/Guide-to-Missions-and-Authorised-Travel.pdf. The agent reads it verbatim (bundled at `src/plugin/data/policy.txt`); flights, fares and trips are synthetic.
+
 **No affiliation with Europe's Rail Joint Undertaking or the European Commission.** The handbook is Governing Board
 Decision N°11/2025 of Europe's Rail Joint Undertaking, which applies by analogy Commission Decision C(2025) 2495, the
 *Guide to Missions and Authorised Travel* (publicly posted on the Joint Undertaking's website), bundled verbatim for
