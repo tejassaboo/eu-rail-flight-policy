@@ -43,7 +43,7 @@
         "role": "LINE_MANAGER",
         "name": "Head of unit",
         "subject": "AUTHORISATION_TO_TRAVEL",
-        "note": "Authorisation to travel signed without expenses"
+        "note": "Authorisation to travel signed without expenses; the unit will not cover any cost of this trip"
       },
       {
         "role": "AUTHORISING_OFFICER",
@@ -170,5 +170,5 @@
     }
   ],
   "distractors": [],
-  "design_notes": "Authorised travel may be financed in none, part or full (lines 1085-1088), and the signed authorisation allows expenses only within its limits (lines 1199-1201). This one was signed without expenses; covering a cost would need it cancelled and a new one approved (lines 1210-1213), which nobody has asked for. The organisation buys no ticket."
+  "design_notes": "Authorised travel may be financed in none, part or full (lines 1085-1088), and the signed authorisation allows expenses only within its limits (lines 1199-1201). This one was signed without expenses; covering a cost would need it cancelled and a new one approved (lines 1210-1213), and the head of unit notes that the unit will not cover any cost. The organisation buys no ticket."
 }

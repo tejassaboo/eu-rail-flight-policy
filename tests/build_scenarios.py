@@ -832,7 +832,8 @@ scenario(
          origin="CDG", destination="DUB", travel_date="2027-02-10", booking_date="2027-01-14",
          meeting_start_local="2027-02-11 09:30", purpose="Speaking at a rail-history conference at Trinity College Dublin",
          event_role="SPEAKER",
-         sign_offs=[sign(LM, "Head of unit", "AUTHORISATION_TO_TRAVEL", "Authorisation to travel signed without expenses"),
+         sign_offs=[sign(LM, "Head of unit", "AUTHORISATION_TO_TRAVEL",
+                         "Authorisation to travel signed without expenses; the unit will not cover any cost of this trip"),
                     sign(AO, "Authorising officer", "AUTHORISATION_TO_TRAVEL",
                          "Authorisation to travel signed with a cost estimate of zero")]),
     dublin(),
@@ -841,7 +842,8 @@ scenario(
     [AUTH_FINANCE, AUTH_SIGNED, AUTH_NONE, AUTH_DEF],
     "Authorised travel may be financed in none, part or full (lines 1085-1088), and the signed authorisation allows "
     "expenses only within its limits (lines 1199-1201). This one was signed without expenses; covering a cost would need "
-    "it cancelled and a new one approved (lines 1210-1213), which nobody has asked for. The organisation buys no ticket.",
+    "it cancelled and a new one approved (lines 1210-1213), and the head of unit notes that the unit will not cover any "
+    "cost. The organisation buys no ticket.",
     twin_of="quill-harrow", twin_fact="the signed authorisation pays the transport or has no expenses")
 
 scenario(
