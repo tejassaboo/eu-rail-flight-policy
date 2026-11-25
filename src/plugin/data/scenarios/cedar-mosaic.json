@@ -1,0 +1,153 @@
+{
+  "id": "cedar-mosaic",
+  "category": "easy",
+  "overlays": [
+    "dearer_option"
+  ],
+  "twin_of": "",
+  "twin_fact": "",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "I'm presenting at the Middle East rail summit in Dubai, which opens the morning after I land. Business class please, if the guide allows it on this flight; otherwise economy.",
+  "trip": {
+    "traveller_name": "Lukas Brenner",
+    "traveller_title": "Head of sector, international relations",
+    "place_of_employment": "Paris",
+    "travel_kind": "MISSION",
+    "authorisation_pays_transport": false,
+    "journey": "OUTWARD",
+    "origin": "CDG",
+    "destination": "DXB",
+    "travel_date": "2027-02-02",
+    "booking_date": "2026-12-15",
+    "meeting_start_local": "2027-02-03 09:00",
+    "meeting_end_local": "",
+    "purpose": "Speaking at the Middle East rail summit in Dubai",
+    "event_role": "SPEAKER",
+    "same_dg_participants": 1,
+    "requested_cabin": "BUSINESS",
+    "wants_refundable": false,
+    "risk_of_change": false,
+    "chosen_airline": "",
+    "avoids_unrequired_hours": false,
+    "accompanies": "NOBODY",
+    "accompanied_cabin": "NONE",
+    "rail_km": 0,
+    "rail_fare_cents": 0,
+    "rail_minutes": 0,
+    "air_justification": "",
+    "line_manager_is_authorising_officer": false,
+    "sign_offs": [
+      {
+        "role": "LINE_MANAGER",
+        "name": "Head of unit",
+        "subject": "MISSION_ORDER",
+        "note": "Mission order signed: purpose, dates and place of the mission"
+      },
+      {
+        "role": "AUTHORISING_OFFICER",
+        "name": "Authorising officer",
+        "subject": "MISSION_ORDER",
+        "note": "Mission order signed for the budget: the mission's cost estimate"
+      }
+    ]
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "CDG",
+        "destination": "DXB",
+        "date": "2027-02-02",
+        "return_date": "",
+        "background": 0,
+        "flights": {
+          "airfrance": {
+            "carrier": "AF",
+            "depart": "09:45",
+            "minutes": [
+              405
+            ]
+          },
+          "emirates": {
+            "carrier": "EK",
+            "depart": "11:50",
+            "minutes": [
+              395
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "airfrance-economy",
+            "flight": "airfrance",
+            "cabin": "ECONOMY",
+            "fare_cents": 62000
+          },
+          {
+            "slot": "airfrance-business",
+            "flight": "airfrance",
+            "cabin": "BUSINESS",
+            "fare_cents": 289000
+          },
+          {
+            "slot": "emirates-economy",
+            "flight": "emirates",
+            "cabin": "ECONOMY",
+            "fare_cents": 58500
+          },
+          {
+            "slot": "emirates-business",
+            "flight": "emirates",
+            "cabin": "BUSINESS",
+            "fare_cents": 314000
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "airfrance-business"
+    ],
+    "cabins": [
+      "BUSINESS"
+    ],
+    "reason_codes": [
+      "INTERNATIONAL_LONG_FLIGHT",
+      "LONG_FLIGHT_APPROVED"
+    ],
+    "approvers": [
+      "AUTHORISING_OFFICER",
+      "LINE_MANAGER",
+      "NONE"
+    ],
+    "clauses": [
+      "TRAVEL_BY_AIR"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        707,
+        710
+      ],
+      "sha256": "eed3c21da496a8842787380d99668398363ffdf23e12025f78996ae1aa9891b9",
+      "quote": "c) in premium economy class when suitable, or business class or equivalent, at the lowest available rates, taking into account the times of meetings and/or special features of the mission, if the outward or return journey includes at least one segment involving at least five-hours of continuous flying time.",
+      "why": "(c) premium economy or business if a segment has at least five hours' continuous flying"
+    },
+    {
+      "lines": [
+        665,
+        668
+      ],
+      "sha256": "2c94c25d48f4f6af5a0bb33362af3187573d506869e899575ea90b404e121c92",
+      "quote": "However, when business class is allowed ( i.e. when one segment of the travel involves at least five hours' continuous flying time), premium economy (41) should be envisaged, when available. This should also be the choice, for example, if the flight is not overnight or when there is no meeting immediately after arrival.",
+      "why": "when business is allowed, premium economy should be envisaged and chosen in some cases"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "Both nonstops fly 395-405 minutes, a segment of at least five hours' continuous flying (lines 707-710), so business may be booked at the lowest rate: Air France at EUR 2,890. No premium economy is sold on these flights, so lines 665-666 ('premium economy ... should be envisaged, when available') do not apply."
+}

@@ -1,0 +1,174 @@
+{
+  "id": "quill-harrow",
+  "category": "multi_rule",
+  "overlays": [
+    "outside_air_section"
+  ],
+  "twin_of": "basil-ridge",
+  "twin_fact": "the signed authorisation pays the transport or has no expenses",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "My authorisation to travel for the rail-history conference at Trinity College Dublin is signed, with the transport paid by the organisation. Please book my flight on 10 February; I speak the next morning.",
+  "trip": {
+    "traveller_name": "Ciara Walsh",
+    "traveller_title": "Communication officer, communication unit",
+    "place_of_employment": "Paris",
+    "travel_kind": "AUTHORISED_TRAVEL",
+    "authorisation_pays_transport": true,
+    "journey": "OUTWARD",
+    "origin": "CDG",
+    "destination": "DUB",
+    "travel_date": "2027-02-10",
+    "booking_date": "2027-01-14",
+    "meeting_start_local": "2027-02-11 09:30",
+    "meeting_end_local": "",
+    "purpose": "Speaking at a rail-history conference at Trinity College Dublin",
+    "event_role": "SPEAKER",
+    "same_dg_participants": 1,
+    "requested_cabin": "ECONOMY",
+    "wants_refundable": false,
+    "risk_of_change": false,
+    "chosen_airline": "",
+    "avoids_unrequired_hours": false,
+    "accompanies": "NOBODY",
+    "accompanied_cabin": "NONE",
+    "rail_km": 0,
+    "rail_fare_cents": 0,
+    "rail_minutes": 0,
+    "air_justification": "",
+    "line_manager_is_authorising_officer": false,
+    "sign_offs": [
+      {
+        "role": "LINE_MANAGER",
+        "name": "Head of unit",
+        "subject": "AUTHORISATION_TO_TRAVEL",
+        "note": "Authorisation to travel signed, transport paid"
+      },
+      {
+        "role": "AUTHORISING_OFFICER",
+        "name": "Authorising officer",
+        "subject": "AUTHORISATION_TO_TRAVEL",
+        "note": "Authorisation to travel signed for the budget: the transport"
+      }
+    ]
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "CDG",
+        "destination": "DUB",
+        "date": "2027-02-10",
+        "return_date": "",
+        "background": 0,
+        "flights": {
+          "morning": {
+            "carrier": "EI",
+            "depart": "10:40",
+            "minutes": [
+              90
+            ]
+          },
+          "noon": {
+            "carrier": "AF",
+            "depart": "12:15",
+            "minutes": [
+              90
+            ]
+          },
+          "evening": {
+            "carrier": "EI",
+            "depart": "16:55",
+            "minutes": [
+              90
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "morning-economy",
+            "flight": "morning",
+            "cabin": "ECONOMY",
+            "fare_cents": 11800
+          },
+          {
+            "slot": "noon-economy",
+            "flight": "noon",
+            "cabin": "ECONOMY",
+            "fare_cents": 13100
+          },
+          {
+            "slot": "evening-economy",
+            "flight": "evening",
+            "cabin": "ECONOMY",
+            "fare_cents": 12400
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "morning-economy"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "LOWEST_FARE"
+    ],
+    "approvers": [
+      "AUTHORISING_OFFICER",
+      "LINE_MANAGER",
+      "NONE"
+    ],
+    "clauses": [
+      "AUTHORISATION_TO_TRAVEL",
+      "AUTHORISED_TRAVEL_TRANSPORT",
+      "TRANSPORT_BETWEEN_PLACES",
+      "TRAVEL_BY_AIR"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        1147,
+        1149
+      ],
+      "sha256": "c78dffebb2f7674cdcb9dda77eb723c2b69c41b5739d37be43b44d9673afddee",
+      "quote": "The rules applicable t o missions apply to authorised travel by analogy regardless of whether the expenses are covered by the Commission, by the person going on authorised travel or by a third party (see Section 2.10).",
+      "why": "the rules for missions apply to authorised travel by analogy"
+    },
+    {
+      "lines": [
+        1199,
+        1203
+      ],
+      "sha256": "cecf9e22985bd3a0ec374439508175f6fd94cf4a3dab672c1e27112c31aea839",
+      "quote": "Once the authorisation has been signed by the staff me mber's line manager and, if necessary, by the authorising officer for commitments , the staff member is formally authorised to travel and incur expenses within the limits set out in the authorisation. The final reservation of tickets, accommodation and any other financial commitment connected with the trip is therefore made after the authorisation has been signed.",
+      "why": "the signed authorisation allows expenses within its limits"
+    },
+    {
+      "lines": [
+        1085,
+        1088
+      ],
+      "sha256": "55a7cd45e40478eb8589d098d9a87d36c577aa8814f8804bc4b8bb0f776bb9e4",
+      "quote": "Depending on the extent to which the event may be considered to be in the interest of the service, the Commission may not finance any cost of the authorised travel, finance the authorised travel in part, or finance it in full . Financing may include transport costs, attendance fees for an outside event, and/or daily subsistence allowance. Authorisation to travel may, where necessary, entail a cost for the budget.",
+      "why": "authorised travel may be financed in none, part or full"
+    },
+    {
+      "lines": [
+        688,
+        691
+      ],
+      "sha256": "947ccf14ea092affcad4f3b3cd78ca7006d7c81eae32868db9ad7f83816c8686",
+      "quote": "As a general rule, you can book air travel: a) in economy class or equivalent, including cases where the ticket in question cannot be exchanged or refunded, at the lowest available rates, taking into account the times of meetings and/or special features of the mission;",
+      "why": "(a) economy, including non-refundable, at the lowest available rates"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "Authorised travel follows the mission rules by analogy (lines 1147-1149), and this authorisation is signed with the transport paid (lines 1199-1203, 1085-1088). Economy at the lowest rate, all flights direct: Aer Lingus 10:40 at EUR 118."
+}

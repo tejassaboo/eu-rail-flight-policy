@@ -1,0 +1,180 @@
+{
+  "id": "elm-sounding",
+  "category": "easy",
+  "overlays": [
+    "multi_leg",
+    "dearer_option"
+  ],
+  "twin_of": "",
+  "twin_fact": "",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "Please book my flight from Paris to Copenhagen on 14 January for the Nordic rail freight forum the next morning. I don't mind which airline.",
+  "trip": {
+    "traveller_name": "Sophie Lambert",
+    "traveller_title": "Policy officer, freight unit",
+    "place_of_employment": "Paris",
+    "travel_kind": "MISSION",
+    "authorisation_pays_transport": false,
+    "journey": "OUTWARD",
+    "origin": "CDG",
+    "destination": "CPH",
+    "travel_date": "2027-01-14",
+    "booking_date": "2026-12-02",
+    "meeting_start_local": "2027-01-15 09:00",
+    "meeting_end_local": "",
+    "purpose": "Nordic rail freight forum in Copenhagen",
+    "event_role": "PARTICIPANT",
+    "same_dg_participants": 1,
+    "requested_cabin": "ECONOMY",
+    "wants_refundable": false,
+    "risk_of_change": false,
+    "chosen_airline": "",
+    "avoids_unrequired_hours": false,
+    "accompanies": "NOBODY",
+    "accompanied_cabin": "NONE",
+    "rail_km": 0,
+    "rail_fare_cents": 0,
+    "rail_minutes": 0,
+    "air_justification": "",
+    "line_manager_is_authorising_officer": false,
+    "sign_offs": [
+      {
+        "role": "LINE_MANAGER",
+        "name": "Head of unit",
+        "subject": "MISSION_ORDER",
+        "note": "Mission order signed: purpose, dates and place of the mission"
+      },
+      {
+        "role": "AUTHORISING_OFFICER",
+        "name": "Authorising officer",
+        "subject": "MISSION_ORDER",
+        "note": "Mission order signed for the budget: the mission's cost estimate"
+      }
+    ]
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "CDG",
+        "destination": "CPH",
+        "date": "2027-01-14",
+        "return_date": "",
+        "background": 0,
+        "flights": {
+          "amsterdam": {
+            "carrier": "KL",
+            "via": [
+              "AMS"
+            ],
+            "depart": "09:05",
+            "minutes": [
+              60,
+              75
+            ],
+            "layovers": [
+              70
+            ]
+          },
+          "direct": {
+            "carrier": "AF",
+            "depart": "10:10",
+            "minutes": [
+              100
+            ]
+          },
+          "frankfurt": {
+            "carrier": "LH",
+            "via": [
+              "FRA"
+            ],
+            "depart": "11:20",
+            "minutes": [
+              60,
+              80
+            ],
+            "layovers": [
+              75
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "amsterdam-economy",
+            "flight": "amsterdam",
+            "cabin": "ECONOMY",
+            "fare_cents": 15400
+          },
+          {
+            "slot": "direct-economy",
+            "flight": "direct",
+            "cabin": "ECONOMY",
+            "fare_cents": 18200
+          },
+          {
+            "slot": "frankfurt-economy",
+            "flight": "frankfurt",
+            "cabin": "ECONOMY",
+            "fare_cents": 16100
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "direct-economy"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "ALTERNATE_ROUTE_WITHIN_MARGIN",
+      "DIRECT_FLIGHT_NORM"
+    ],
+    "approvers": [
+      "AUTHORISING_OFFICER",
+      "LINE_MANAGER",
+      "NONE"
+    ],
+    "clauses": [
+      "SMART_TRAVELLING",
+      "TRANSPORT_BETWEEN_PLACES",
+      "TRAVEL_BY_AIR"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        684,
+        687
+      ],
+      "sha256": "85b6f2bf675515c5e193eb7712e904e1b407f697a8797167e834631d3b4d15a7",
+      "quote": "Direct flights are the norm. However, the authorising officer for commitments may refuse to authorise a direct flight if it would represent a m anifestly unreasonable expense given the arrangements for the mission. The principles set out in Section 1.2 and in Section 2.5.4 must be duly taken into account when assessing whether an expense is manifestly unreasonable.",
+      "why": "direct flights are the norm; the authorising officer may refuse a manifestly unreasonable one"
+    },
+    {
+      "lines": [
+        663,
+        664
+      ],
+      "sha256": "4103d64cb5c39d09076a643fb1918df33cedeafef0c11aaec7aed81b0745046f",
+      "quote": "Air travel for distances up to 550 km must be appropriately justified (40), and direct flights favoured when available, and within reasonable cost variations (40%). Economy class remains the default option.",
+      "why": "air up to 550 km must be justified; direct flights favoured within 40%; economy the default"
+    },
+    {
+      "lines": [
+        688,
+        691
+      ],
+      "sha256": "947ccf14ea092affcad4f3b3cd78ca7006d7c81eae32868db9ad7f83816c8686",
+      "quote": "As a general rule, you can book air travel: a) in economy class or equivalent, including cases where the ticket in question cannot be exchanged or refunded, at the lowest available rates, taking into account the times of meetings and/or special features of the mission;",
+      "why": "(a) economy, including non-refundable, at the lowest available rates"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "Direct flights are the norm (lines 684-687) and are favoured within reasonable cost variations (40%, lines 663-664). The Air France nonstop at EUR 182 is 18% above the KLM connection at EUR 154, so on either reading of the 40% (all routes, or only up to 550 km with the norm elsewhere) the direct flight is booked."
+}

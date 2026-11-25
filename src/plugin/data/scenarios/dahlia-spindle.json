@@ -1,0 +1,188 @@
+{
+  "id": "dahlia-spindle",
+  "category": "flag",
+  "overlays": [
+    "multi_leg",
+    "unclear_phrase"
+  ],
+  "twin_of": "",
+  "twin_fact": "",
+  "flag_twins": [
+    "elm-sounding",
+    "nutmeg-spire"
+  ],
+  "ambiguity_note": {
+    "phrase": "direct flights favoured when available, and within reasonable cost variations (40%)",
+    "readings": [
+      "the 40% margin applies to every route: the direct flight is more than 40% dearer, so the cheapest connection at the lowest available rate",
+      "the 40% sentence is about journeys up to 550 km; elsewhere direct flights are the norm and only the authorising officer may refuse one as manifestly unreasonable: the direct flight"
+    ]
+  },
+  "request": "Please book my flight from Madrid to Copenhagen on 9 February for the freight corridor meeting the next morning; I'll go however the guide says.",
+  "trip": {
+    "traveller_name": "Carmen Ortega",
+    "traveller_title": "Policy officer, freight unit",
+    "place_of_employment": "Madrid",
+    "travel_kind": "MISSION",
+    "authorisation_pays_transport": false,
+    "journey": "OUTWARD",
+    "origin": "MAD",
+    "destination": "CPH",
+    "travel_date": "2027-02-09",
+    "booking_date": "2027-01-12",
+    "meeting_start_local": "2027-02-10 09:00",
+    "meeting_end_local": "",
+    "purpose": "Freight corridor meeting in Copenhagen",
+    "event_role": "PARTICIPANT",
+    "same_dg_participants": 1,
+    "requested_cabin": "ECONOMY",
+    "wants_refundable": false,
+    "risk_of_change": false,
+    "chosen_airline": "",
+    "avoids_unrequired_hours": false,
+    "accompanies": "NOBODY",
+    "accompanied_cabin": "NONE",
+    "rail_km": 0,
+    "rail_fare_cents": 0,
+    "rail_minutes": 0,
+    "air_justification": "",
+    "line_manager_is_authorising_officer": false,
+    "sign_offs": [
+      {
+        "role": "LINE_MANAGER",
+        "name": "Head of unit",
+        "subject": "MISSION_ORDER",
+        "note": "Mission order signed: purpose, dates and place of the mission"
+      },
+      {
+        "role": "AUTHORISING_OFFICER",
+        "name": "Authorising officer",
+        "subject": "MISSION_ORDER",
+        "note": "Mission order signed for the budget: the mission's cost estimate"
+      }
+    ]
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "MAD",
+        "destination": "CPH",
+        "date": "2027-02-09",
+        "return_date": "",
+        "background": 0,
+        "flights": {
+          "amsterdam": {
+            "carrier": "KL",
+            "via": [
+              "AMS"
+            ],
+            "depart": "09:15",
+            "minutes": [
+              135,
+              75
+            ],
+            "layovers": [
+              65
+            ]
+          },
+          "direct": {
+            "carrier": "IB",
+            "depart": "10:20",
+            "minutes": [
+              175
+            ]
+          },
+          "frankfurt": {
+            "carrier": "LH",
+            "via": [
+              "FRA"
+            ],
+            "depart": "11:00",
+            "minutes": [
+              130,
+              80
+            ],
+            "layovers": [
+              70
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "amsterdam-economy",
+            "flight": "amsterdam",
+            "cabin": "ECONOMY",
+            "fare_cents": 16400
+          },
+          {
+            "slot": "direct-economy",
+            "flight": "direct",
+            "cabin": "ECONOMY",
+            "fare_cents": 29800
+          },
+          {
+            "slot": "frankfurt-economy",
+            "flight": "frankfurt",
+            "cabin": "ECONOMY",
+            "fare_cents": 17100
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "FLAG_FOR_APPROVAL",
+    "offer_slots": [
+      "amsterdam-economy",
+      "direct-economy"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "APPROVAL_REQUIRED",
+      "UNCLEAR_POLICY_TEXT"
+    ],
+    "approvers": [
+      "AUTHORISING_OFFICER",
+      "NOT_NAMED"
+    ],
+    "clauses": [
+      "SMART_TRAVELLING",
+      "TRAVEL_BY_AIR"
+    ],
+    "unclear_phrase": "direct flights favoured when available, and within reasonable cost variations (40%)"
+  },
+  "must_keep": [
+    {
+      "lines": [
+        684,
+        687
+      ],
+      "sha256": "85b6f2bf675515c5e193eb7712e904e1b407f697a8797167e834631d3b4d15a7",
+      "quote": "Direct flights are the norm. However, the authorising officer for commitments may refuse to authorise a direct flight if it would represent a m anifestly unreasonable expense given the arrangements for the mission. The principles set out in Section 1.2 and in Section 2.5.4 must be duly taken into account when assessing whether an expense is manifestly unreasonable.",
+      "why": "direct flights are the norm; the authorising officer may refuse a manifestly unreasonable one"
+    },
+    {
+      "lines": [
+        663,
+        664
+      ],
+      "sha256": "4103d64cb5c39d09076a643fb1918df33cedeafef0c11aaec7aed81b0745046f",
+      "quote": "Air travel for distances up to 550 km must be appropriately justified (40), and direct flights favoured when available, and within reasonable cost variations (40%). Economy class remains the default option.",
+      "why": "air up to 550 km must be justified; direct flights favoured within 40%; economy the default"
+    },
+    {
+      "lines": [
+        688,
+        691
+      ],
+      "sha256": "947ccf14ea092affcad4f3b3cd78ca7006d7c81eae32868db9ad7f83816c8686",
+      "quote": "As a general rule, you can book air travel: a) in economy class or equivalent, including cases where the ticket in question cannot be exchanged or refunded, at the lowest available rates, taking into account the times of meetings and/or special features of the mission;",
+      "why": "(a) economy, including non-refundable, at the lowest available rates"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "The Iberia nonstop at EUR 298 is 82% above the KLM connection at EUR 164. Lines 684-687 make direct flights the norm, refusable only by the authorising officer as a manifestly unreasonable expense; lines 663-664 favour direct flights 'within reasonable cost variations (40%)', in a sentence about air travel up to 550 km. On a 2,058 km route the text does not say whether the 40% applies, nor what is manifestly unreasonable: hold the connection or the direct flight."
+}

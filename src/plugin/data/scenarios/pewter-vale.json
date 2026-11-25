@@ -1,0 +1,162 @@
+{
+  "id": "pewter-vale",
+  "category": "multi_rule",
+  "overlays": [
+    "dearer_option",
+    "date_arithmetic"
+  ],
+  "twin_of": "",
+  "twin_fact": "",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "I have to be at the hearing at the French transport ministry in Paris at 09:30 on 26 January. My head of unit has put on file why I need to fly out early that morning. I'd rather not take a dawn flight, but book what the guide says.",
+  "trip": {
+    "traveller_name": "Stefan Bauer",
+    "traveller_title": "Legal officer, legal affairs",
+    "place_of_employment": "Munich",
+    "travel_kind": "MISSION",
+    "authorisation_pays_transport": false,
+    "journey": "OUTWARD",
+    "origin": "MUC",
+    "destination": "CDG",
+    "travel_date": "2027-01-26",
+    "booking_date": "2027-01-05",
+    "meeting_start_local": "2027-01-26 09:30",
+    "meeting_end_local": "",
+    "purpose": "Hearing at the French transport ministry in Paris",
+    "event_role": "PARTICIPANT",
+    "same_dg_participants": 1,
+    "requested_cabin": "ECONOMY",
+    "wants_refundable": false,
+    "risk_of_change": false,
+    "chosen_airline": "",
+    "avoids_unrequired_hours": true,
+    "accompanies": "NOBODY",
+    "accompanied_cabin": "NONE",
+    "rail_km": 0,
+    "rail_fare_cents": 0,
+    "rail_minutes": 0,
+    "air_justification": "",
+    "line_manager_is_authorising_officer": false,
+    "sign_offs": [
+      {
+        "role": "LINE_MANAGER",
+        "name": "Head of unit",
+        "subject": "MISSION_ORDER",
+        "note": "Mission order signed: purpose, dates and place of the mission"
+      },
+      {
+        "role": "AUTHORISING_OFFICER",
+        "name": "Authorising officer",
+        "subject": "MISSION_ORDER",
+        "note": "Mission order signed for the budget: the mission's cost estimate"
+      },
+      {
+        "role": "LINE_MANAGER",
+        "name": "Head of unit",
+        "subject": "TRAVEL_HOURS",
+        "note": "The 09:30 hearing cannot be moved and no flight the evening before suits the team's schedule, so the traveller flies out early that morning"
+      }
+    ]
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "MUC",
+        "destination": "CDG",
+        "date": "2027-01-26",
+        "return_date": "",
+        "background": 0,
+        "flights": {
+          "first": {
+            "carrier": "LH",
+            "depart": "06:45",
+            "minutes": [
+              80
+            ]
+          },
+          "second": {
+            "carrier": "AF",
+            "depart": "07:30",
+            "minutes": [
+              85
+            ]
+          },
+          "third": {
+            "carrier": "LH",
+            "depart": "09:10",
+            "minutes": [
+              80
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "first-economy",
+            "flight": "first",
+            "cabin": "ECONOMY",
+            "fare_cents": 13800
+          },
+          {
+            "slot": "second-economy",
+            "flight": "second",
+            "cabin": "ECONOMY",
+            "fare_cents": 14900
+          },
+          {
+            "slot": "third-economy",
+            "flight": "third",
+            "cabin": "ECONOMY",
+            "fare_cents": 12600
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "first-economy"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "EARLY_LATE_HOURS_JUSTIFIED"
+    ],
+    "approvers": [
+      "AUTHORISING_OFFICER",
+      "LINE_MANAGER",
+      "NONE"
+    ],
+    "clauses": [
+      "DEPARTURE_RETURN",
+      "TRANSPORT_BETWEEN_PLACES",
+      "TRAVEL_BY_AIR"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        577,
+        582
+      ],
+      "sha256": "59483f98a8ba2fd93cef9b5856fdfb1b59d75cb1526d785caafa5c84f7dee193",
+      "quote": "However, the mission performer in principle cannot be required to leave before 8:00 or arrive after 22:00, either at the place of employment or at the place of the mission, unless the line manager gives justifiable reasons for them doing so and which respect the principles set out in Section 1.2. In this context, departure and arrival should be the departure and arrival times of the main means of transport, that is to say, take-off or landing in the case of an aircraft, and the times of departure and arrival for all other forms of transport.",
+      "why": "a mission performer cannot be required to take off before 8:00 or land after 22:00, unless the line manager gives justifiable reasons"
+    },
+    {
+      "lines": [
+        688,
+        691
+      ],
+      "sha256": "947ccf14ea092affcad4f3b3cd78ca7006d7c81eae32868db9ad7f83816c8686",
+      "quote": "As a general rule, you can book air travel: a) in economy class or equivalent, including cases where the ticket in question cannot be exchanged or refunded, at the lowest available rates, taking into account the times of meetings and/or special features of the mission;",
+      "why": "(a) economy, including non-refundable, at the lowest available rates"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "The 09:10 flight is cheapest but lands at 10:30, after the 09:30 hearing (lines 689-691: taking into account the times of meetings). The 06:45 and 07:30 flights take off before 8:00, but the line manager's justifiable reasons are on file (lines 577-579), so the traveller can be required to take them: the cheaper, Lufthansa 06:45 at EUR 138. The traveller's wish is declined on the line manager's reasons, so LOWEST_FARE is not the reason."
+}

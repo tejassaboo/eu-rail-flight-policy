@@ -1,0 +1,155 @@
+{
+  "id": "dune-orchard",
+  "category": "easy",
+  "overlays": [
+    "dearer_option"
+  ],
+  "twin_of": "",
+  "twin_fact": "",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "Please book me Madrid to New York on 20 January for the transatlantic rail standards meeting, which starts the next morning. Premium economy if I'm entitled to it; otherwise economy.",
+  "trip": {
+    "traveller_name": "Ines Carvalho",
+    "traveller_title": "Standards officer, safety unit",
+    "place_of_employment": "Madrid",
+    "travel_kind": "MISSION",
+    "authorisation_pays_transport": false,
+    "journey": "OUTWARD",
+    "origin": "MAD",
+    "destination": "JFK",
+    "travel_date": "2027-01-20",
+    "booking_date": "2026-12-10",
+    "meeting_start_local": "2027-01-21 09:00",
+    "meeting_end_local": "",
+    "purpose": "Transatlantic rail standards meeting in New York",
+    "event_role": "PARTICIPANT",
+    "same_dg_participants": 1,
+    "requested_cabin": "PREMIUM_ECONOMY",
+    "wants_refundable": false,
+    "risk_of_change": false,
+    "chosen_airline": "",
+    "avoids_unrequired_hours": false,
+    "accompanies": "NOBODY",
+    "accompanied_cabin": "NONE",
+    "rail_km": 0,
+    "rail_fare_cents": 0,
+    "rail_minutes": 0,
+    "air_justification": "",
+    "line_manager_is_authorising_officer": false,
+    "sign_offs": [
+      {
+        "role": "LINE_MANAGER",
+        "name": "Head of unit",
+        "subject": "MISSION_ORDER",
+        "note": "Mission order signed: purpose, dates and place of the mission"
+      },
+      {
+        "role": "AUTHORISING_OFFICER",
+        "name": "Authorising officer",
+        "subject": "MISSION_ORDER",
+        "note": "Mission order signed for the budget: the mission's cost estimate"
+      }
+    ]
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "MAD",
+        "destination": "JFK",
+        "date": "2027-01-20",
+        "return_date": "",
+        "background": 0,
+        "flights": {
+          "iberia": {
+            "carrier": "IB",
+            "depart": "11:30",
+            "minutes": [
+              440
+            ]
+          },
+          "american": {
+            "carrier": "AA",
+            "depart": "15:00",
+            "minutes": [
+              450
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "iberia-economy",
+            "flight": "iberia",
+            "cabin": "ECONOMY",
+            "fare_cents": 54000
+          },
+          {
+            "slot": "iberia-premium",
+            "flight": "iberia",
+            "cabin": "PREMIUM_ECONOMY",
+            "fare_cents": 109000
+          },
+          {
+            "slot": "iberia-business",
+            "flight": "iberia",
+            "cabin": "BUSINESS",
+            "fare_cents": 365000
+          },
+          {
+            "slot": "american-economy",
+            "flight": "american",
+            "cabin": "ECONOMY",
+            "fare_cents": 56500
+          },
+          {
+            "slot": "american-premium",
+            "flight": "american",
+            "cabin": "PREMIUM_ECONOMY",
+            "fare_cents": 114000
+          },
+          {
+            "slot": "american-business",
+            "flight": "american",
+            "cabin": "BUSINESS",
+            "fare_cents": 390000
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "iberia-premium"
+    ],
+    "cabins": [
+      "PREMIUM_ECONOMY"
+    ],
+    "reason_codes": [
+      "PREMIUM_ECONOMY_ALLOWED"
+    ],
+    "approvers": [
+      "AUTHORISING_OFFICER",
+      "LINE_MANAGER",
+      "NONE"
+    ],
+    "clauses": [
+      "TRAVEL_BY_AIR"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        707,
+        710
+      ],
+      "sha256": "eed3c21da496a8842787380d99668398363ffdf23e12025f78996ae1aa9891b9",
+      "quote": "c) in premium economy class when suitable, or business class or equivalent, at the lowest available rates, taking into account the times of meetings and/or special features of the mission, if the outward or return journey includes at least one segment involving at least five-hours of continuous flying time.",
+      "why": "(c) premium economy or business if a segment has at least five hours' continuous flying"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "Both nonstops fly 440-450 minutes, so premium economy may be booked (lines 707-710): the cheapest premium economy fare, Iberia at EUR 1,090."
+}

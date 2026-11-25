@@ -1,0 +1,169 @@
+{
+  "id": "iris-pennant",
+  "category": "boundary_twin",
+  "overlays": [
+    "dearer_option"
+  ],
+  "twin_of": "jasper-wold",
+  "twin_fact": "the cheapest flight takes off at 07:55 or 08:00",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "Please book my flight from Paris to Rome on 3 February for the railway agency working party, which starts the next day at 10:00. The cheapest fare is fine, as long as it doesn't leave or land at an hour the guide says I can't be made to travel.",
+  "trip": {
+    "traveller_name": "Amelie Rousseau",
+    "traveller_title": "Policy officer, safety unit",
+    "place_of_employment": "Paris",
+    "travel_kind": "MISSION",
+    "authorisation_pays_transport": false,
+    "journey": "OUTWARD",
+    "origin": "CDG",
+    "destination": "FCO",
+    "travel_date": "2027-02-03",
+    "booking_date": "2027-01-11",
+    "meeting_start_local": "2027-02-04 10:00",
+    "meeting_end_local": "",
+    "purpose": "Railway agency working party in Rome",
+    "event_role": "PARTICIPANT",
+    "same_dg_participants": 1,
+    "requested_cabin": "ECONOMY",
+    "wants_refundable": false,
+    "risk_of_change": false,
+    "chosen_airline": "",
+    "avoids_unrequired_hours": true,
+    "accompanies": "NOBODY",
+    "accompanied_cabin": "NONE",
+    "rail_km": 0,
+    "rail_fare_cents": 0,
+    "rail_minutes": 0,
+    "air_justification": "",
+    "line_manager_is_authorising_officer": false,
+    "sign_offs": [
+      {
+        "role": "LINE_MANAGER",
+        "name": "Head of unit",
+        "subject": "MISSION_ORDER",
+        "note": "Mission order signed: purpose, dates and place of the mission"
+      },
+      {
+        "role": "AUTHORISING_OFFICER",
+        "name": "Authorising officer",
+        "subject": "MISSION_ORDER",
+        "note": "Mission order signed for the budget: the mission's cost estimate"
+      }
+    ]
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "CDG",
+        "destination": "FCO",
+        "date": "2027-02-03",
+        "return_date": "",
+        "background": 0,
+        "flights": {
+          "first": {
+            "carrier": "AF",
+            "depart": "07:55",
+            "minutes": [
+              120
+            ]
+          },
+          "morning": {
+            "carrier": "AF",
+            "depart": "09:35",
+            "minutes": [
+              120
+            ]
+          },
+          "noon": {
+            "carrier": "AF",
+            "depart": "12:50",
+            "minutes": [
+              120
+            ]
+          },
+          "evening": {
+            "carrier": "AF",
+            "depart": "18:20",
+            "minutes": [
+              120
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "first-economy",
+            "flight": "first",
+            "cabin": "ECONOMY",
+            "fare_cents": 11900
+          },
+          {
+            "slot": "morning-economy",
+            "flight": "morning",
+            "cabin": "ECONOMY",
+            "fare_cents": 16400
+          },
+          {
+            "slot": "noon-economy",
+            "flight": "noon",
+            "cabin": "ECONOMY",
+            "fare_cents": 17100
+          },
+          {
+            "slot": "evening-economy",
+            "flight": "evening",
+            "cabin": "ECONOMY",
+            "fare_cents": 15800
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "evening-economy"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "EARLY_LATE_HOURS_PROTECTED",
+      "LOWEST_FARE"
+    ],
+    "approvers": [
+      "AUTHORISING_OFFICER",
+      "LINE_MANAGER",
+      "NONE"
+    ],
+    "clauses": [
+      "DEPARTURE_RETURN",
+      "TRANSPORT_BETWEEN_PLACES",
+      "TRAVEL_BY_AIR"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        577,
+        582
+      ],
+      "sha256": "59483f98a8ba2fd93cef9b5856fdfb1b59d75cb1526d785caafa5c84f7dee193",
+      "quote": "However, the mission performer in principle cannot be required to leave before 8:00 or arrive after 22:00, either at the place of employment or at the place of the mission, unless the line manager gives justifiable reasons for them doing so and which respect the principles set out in Section 1.2. In this context, departure and arrival should be the departure and arrival times of the main means of transport, that is to say, take-off or landing in the case of an aircraft, and the times of departure and arrival for all other forms of transport.",
+      "why": "a mission performer cannot be required to take off before 8:00 or land after 22:00, unless the line manager gives justifiable reasons"
+    },
+    {
+      "lines": [
+        688,
+        691
+      ],
+      "sha256": "947ccf14ea092affcad4f3b3cd78ca7006d7c81eae32868db9ad7f83816c8686",
+      "quote": "As a general rule, you can book air travel: a) in economy class or equivalent, including cases where the ticket in question cannot be exchanged or refunded, at the lowest available rates, taking into account the times of meetings and/or special features of the mission;",
+      "why": "(a) economy, including non-refundable, at the lowest available rates"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "The cheapest flight takes off at 07:55, before 8:00, which the traveller cannot be required to do (lines 577-582) and asks not to; no line manager's reasons are on file. The cheapest flight in hours is Air France 18:20 at EUR 158."
+}

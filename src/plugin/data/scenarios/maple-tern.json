@@ -1,0 +1,158 @@
+{
+  "id": "maple-tern",
+  "category": "boundary_twin",
+  "overlays": [
+    "multi_leg",
+    "dearer_option"
+  ],
+  "twin_of": "nutmeg-spire",
+  "twin_fact": "the Cairo-Nairobi flight is scheduled at 300 or 290 minutes",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "I'm going to Nairobi for the East African rail corridor review, which starts the day after I land. Premium economy if I'm entitled to it; otherwise economy. Connections are fine.",
+  "trip": {
+    "traveller_name": "Nadia Okafor",
+    "traveller_title": "Programme officer, international cooperation",
+    "place_of_employment": "Paris",
+    "travel_kind": "MISSION",
+    "authorisation_pays_transport": false,
+    "journey": "OUTWARD",
+    "origin": "CDG",
+    "destination": "NBO",
+    "travel_date": "2027-02-22",
+    "booking_date": "2027-01-20",
+    "meeting_start_local": "2027-02-23 09:00",
+    "meeting_end_local": "",
+    "purpose": "East African rail corridor review in Nairobi",
+    "event_role": "PARTICIPANT",
+    "same_dg_participants": 1,
+    "requested_cabin": "PREMIUM_ECONOMY",
+    "wants_refundable": false,
+    "risk_of_change": false,
+    "chosen_airline": "",
+    "avoids_unrequired_hours": false,
+    "accompanies": "NOBODY",
+    "accompanied_cabin": "NONE",
+    "rail_km": 0,
+    "rail_fare_cents": 0,
+    "rail_minutes": 0,
+    "air_justification": "",
+    "line_manager_is_authorising_officer": false,
+    "sign_offs": [
+      {
+        "role": "LINE_MANAGER",
+        "name": "Head of unit",
+        "subject": "MISSION_ORDER",
+        "note": "Mission order signed: purpose, dates and place of the mission"
+      },
+      {
+        "role": "AUTHORISING_OFFICER",
+        "name": "Authorising officer",
+        "subject": "MISSION_ORDER",
+        "note": "Mission order signed for the budget: the mission's cost estimate"
+      }
+    ]
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "CDG",
+        "destination": "NBO",
+        "date": "2027-02-22",
+        "return_date": "",
+        "background": 0,
+        "flights": {
+          "first": {
+            "carrier": "MS",
+            "via": [
+              "CAI"
+            ],
+            "depart": "08:15",
+            "minutes": [
+              260,
+              300
+            ],
+            "layovers": [
+              95
+            ]
+          },
+          "second": {
+            "carrier": "MS",
+            "via": [
+              "CAI"
+            ],
+            "depart": "09:05",
+            "minutes": [
+              260,
+              300
+            ],
+            "layovers": [
+              75
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "first-economy",
+            "flight": "first",
+            "cabin": "ECONOMY",
+            "fare_cents": 61000
+          },
+          {
+            "slot": "first-premium",
+            "flight": "first",
+            "cabin": "PREMIUM_ECONOMY",
+            "fare_cents": 112000
+          },
+          {
+            "slot": "second-economy",
+            "flight": "second",
+            "cabin": "ECONOMY",
+            "fare_cents": 58500
+          },
+          {
+            "slot": "second-premium",
+            "flight": "second",
+            "cabin": "PREMIUM_ECONOMY",
+            "fare_cents": 118000
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "first-premium"
+    ],
+    "cabins": [
+      "PREMIUM_ECONOMY"
+    ],
+    "reason_codes": [
+      "PREMIUM_ECONOMY_ALLOWED"
+    ],
+    "approvers": [
+      "AUTHORISING_OFFICER",
+      "LINE_MANAGER",
+      "NONE"
+    ],
+    "clauses": [
+      "TRAVEL_BY_AIR"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        707,
+        710
+      ],
+      "sha256": "eed3c21da496a8842787380d99668398363ffdf23e12025f78996ae1aa9891b9",
+      "quote": "c) in premium economy class when suitable, or business class or equivalent, at the lowest available rates, taking into account the times of meetings and/or special features of the mission, if the outward or return journey includes at least one segment involving at least five-hours of continuous flying time.",
+      "why": "(c) premium economy or business if a segment has at least five hours' continuous flying"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "Both itineraries connect in Cairo: Paris-Cairo 260 minutes, Cairo-Nairobi 300 minutes. The journey 'includes at least one segment involving at least five-hours of continuous flying time' (lines 707-710), so premium economy may be booked: the cheapest, EgyptAir 08:15 at EUR 1,120."
+}

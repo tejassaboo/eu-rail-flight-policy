@@ -1,0 +1,161 @@
+{
+  "id": "aspen-wicket",
+  "category": "refusal",
+  "overlays": [],
+  "twin_of": "vesper-hollow",
+  "twin_fact": "a justification for flying is on file or not",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "Could you book me a flight from Paris to Amsterdam on 19 January for the users' group the next morning? I simply prefer flying. If the guide says I should take the train, tell me and I'll arrange the train myself.",
+  "trip": {
+    "traveller_name": "Camille Bernard",
+    "traveller_title": "Project officer, digital rail unit",
+    "place_of_employment": "Paris",
+    "travel_kind": "MISSION",
+    "authorisation_pays_transport": false,
+    "journey": "OUTWARD",
+    "origin": "CDG",
+    "destination": "AMS",
+    "travel_date": "2027-01-19",
+    "booking_date": "2026-12-17",
+    "meeting_start_local": "2027-01-20 09:00",
+    "meeting_end_local": "",
+    "purpose": "Signalling users' group in Amsterdam",
+    "event_role": "PARTICIPANT",
+    "same_dg_participants": 1,
+    "requested_cabin": "ECONOMY",
+    "wants_refundable": false,
+    "risk_of_change": false,
+    "chosen_airline": "",
+    "avoids_unrequired_hours": false,
+    "accompanies": "NOBODY",
+    "accompanied_cabin": "NONE",
+    "rail_km": 505,
+    "rail_fare_cents": 10900,
+    "rail_minutes": 200,
+    "air_justification": "",
+    "line_manager_is_authorising_officer": false,
+    "sign_offs": [
+      {
+        "role": "LINE_MANAGER",
+        "name": "Head of unit",
+        "subject": "MISSION_ORDER",
+        "note": "Mission order signed: purpose, dates and place of the mission"
+      },
+      {
+        "role": "AUTHORISING_OFFICER",
+        "name": "Authorising officer",
+        "subject": "MISSION_ORDER",
+        "note": "Mission order signed for the budget: the mission's cost estimate"
+      }
+    ]
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "CDG",
+        "destination": "AMS",
+        "date": "2027-01-19",
+        "return_date": "",
+        "background": 0,
+        "flights": {
+          "morning": {
+            "carrier": "KL",
+            "depart": "10:05",
+            "minutes": [
+              70
+            ]
+          },
+          "afternoon": {
+            "carrier": "AF",
+            "depart": "13:40",
+            "minutes": [
+              70
+            ]
+          },
+          "evening": {
+            "carrier": "KL",
+            "depart": "18:25",
+            "minutes": [
+              70
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "morning-economy",
+            "flight": "morning",
+            "cabin": "ECONOMY",
+            "fare_cents": 9600
+          },
+          {
+            "slot": "afternoon-economy",
+            "flight": "afternoon",
+            "cabin": "ECONOMY",
+            "fare_cents": 10400
+          },
+          {
+            "slot": "evening-economy",
+            "flight": "evening",
+            "cabin": "ECONOMY",
+            "fare_cents": 9100
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "REFUSE",
+    "offer_slots": [],
+    "cabins": [
+      "NONE"
+    ],
+    "reason_codes": [
+      "DISTANCE_BELOW_MINIMUM",
+      "NO_COMPLIANT_OFFER",
+      "RAIL_PREFERRED"
+    ],
+    "approvers": [
+      "AUTHORISING_OFFICER",
+      "LINE_MANAGER",
+      "NONE"
+    ],
+    "clauses": [
+      "SMART_TRAVELLING",
+      "TRANSPORT_BETWEEN_PLACES"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        630,
+        637
+      ],
+      "sha256": "323e324f88a3eeb914253ef405b77e72f77be601b95f6fca49a75706b5376f6d",
+      "quote": "When proposing the practical arrangements of the mission, without prejudice to article 12, paragraph 2, of Annex VII to the Staff Regulations, the mission performers are encouraged to use rail travel for distances up to 550km (37) per travel segment as well as for distances above 550km where it is an efficient alternative to air travel , for example in the case of high-speed and/or night trains . When assessing the financial cost, the greener alternative should be favoured where the price of the rail travel is not more than 40% (38) above the price of a n economy -class (39) plane ticket for the journey or segment, if it remains within the budgetary constraints of the DG . The s ame principle for the cost comparison applies between journeys by train and journeys by car that are not zero- or low- emissions.",
+      "why": "rail encouraged up to 550 km and favoured within 40% of the economy plane ticket"
+    },
+    {
+      "lines": [
+        663,
+        664
+      ],
+      "sha256": "4103d64cb5c39d09076a643fb1918df33cedeafef0c11aaec7aed81b0745046f",
+      "quote": "Air travel for distances up to 550 km must be appropriately justified (40), and direct flights favoured when available, and within reasonable cost variations (40%). Economy class remains the default option.",
+      "why": "air up to 550 km must be justified; direct flights favoured within 40%; economy the default"
+    }
+  ],
+  "distractors": [
+    {
+      "lines": [
+        652,
+        655
+      ],
+      "quote": "These two elements (price variation and distance) may be interpreted in a flexible manner",
+      "why": "footnote 38: the 550 km and 40% figures are read flexibly; the cases keep wide margins"
+    }
+  ],
+  "design_notes": "The rail journey is 505 km (up to 550 km) and its first-class fare (EUR 109) is 20% above the lowest plane fare (EUR 91), within 40%, so the greener alternative is favoured (lines 630-636), and air travel up to 550 km 'must be appropriately justified' (line 663). A preference for flying is no justification: no air ticket is bought."
+}

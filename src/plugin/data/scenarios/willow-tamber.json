@@ -1,0 +1,186 @@
+{
+  "id": "willow-tamber",
+  "category": "distractor",
+  "overlays": [
+    "upgrade_not_taken",
+    "date_arithmetic",
+    "month_end",
+    "overnight",
+    "outside_air_section"
+  ],
+  "twin_of": "",
+  "twin_fact": "",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "I fly to Singapore on 31 January for the urban rail congress, which opens on 2 February. Economy is fine and so is the overnight flight; I'll ask for the rest day the guide allows after such a long flight.",
+  "trip": {
+    "traveller_name": "Mei Lin Tan",
+    "traveller_title": "Policy officer, urban mobility",
+    "place_of_employment": "Paris",
+    "travel_kind": "MISSION",
+    "authorisation_pays_transport": false,
+    "journey": "OUTWARD",
+    "origin": "CDG",
+    "destination": "SIN",
+    "travel_date": "2027-01-31",
+    "booking_date": "2026-12-20",
+    "meeting_start_local": "2027-02-02 09:00",
+    "meeting_end_local": "",
+    "purpose": "Urban rail congress in Singapore",
+    "event_role": "PARTICIPANT",
+    "same_dg_participants": 1,
+    "requested_cabin": "ECONOMY",
+    "wants_refundable": false,
+    "risk_of_change": false,
+    "chosen_airline": "",
+    "avoids_unrequired_hours": false,
+    "accompanies": "NOBODY",
+    "accompanied_cabin": "NONE",
+    "rail_km": 0,
+    "rail_fare_cents": 0,
+    "rail_minutes": 0,
+    "air_justification": "",
+    "line_manager_is_authorising_officer": false,
+    "sign_offs": [
+      {
+        "role": "LINE_MANAGER",
+        "name": "Head of unit",
+        "subject": "MISSION_ORDER",
+        "note": "Mission order signed: purpose, dates and place of the mission"
+      },
+      {
+        "role": "AUTHORISING_OFFICER",
+        "name": "Authorising officer",
+        "subject": "MISSION_ORDER",
+        "note": "Mission order signed for the budget: the mission's cost estimate"
+      }
+    ]
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "CDG",
+        "destination": "SIN",
+        "date": "2027-01-31",
+        "return_date": "",
+        "background": 0,
+        "flights": {
+          "airfrance": {
+            "carrier": "AF",
+            "depart": "11:30",
+            "minutes": [
+              760
+            ]
+          },
+          "singapore": {
+            "carrier": "SQ",
+            "depart": "12:40",
+            "minutes": [
+              775
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "airfrance-economy",
+            "flight": "airfrance",
+            "cabin": "ECONOMY",
+            "fare_cents": 72000
+          },
+          {
+            "slot": "airfrance-premium",
+            "flight": "airfrance",
+            "cabin": "PREMIUM_ECONOMY",
+            "fare_cents": 164000
+          },
+          {
+            "slot": "airfrance-business",
+            "flight": "airfrance",
+            "cabin": "BUSINESS",
+            "fare_cents": 490000
+          },
+          {
+            "slot": "singapore-economy",
+            "flight": "singapore",
+            "cabin": "ECONOMY",
+            "fare_cents": 69500
+          },
+          {
+            "slot": "singapore-premium",
+            "flight": "singapore",
+            "cabin": "PREMIUM_ECONOMY",
+            "fare_cents": 158000
+          },
+          {
+            "slot": "singapore-business",
+            "flight": "singapore",
+            "cabin": "BUSINESS",
+            "fare_cents": 520000
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "singapore-economy"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "LOWEST_FARE"
+    ],
+    "approvers": [
+      "AUTHORISING_OFFICER",
+      "LINE_MANAGER",
+      "NONE"
+    ],
+    "clauses": [
+      "TRANSPORT_BETWEEN_PLACES",
+      "TRAVEL_BY_AIR"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        688,
+        691
+      ],
+      "sha256": "947ccf14ea092affcad4f3b3cd78ca7006d7c81eae32868db9ad7f83816c8686",
+      "quote": "As a general rule, you can book air travel: a) in economy class or equivalent, including cases where the ticket in question cannot be exchanged or refunded, at the lowest available rates, taking into account the times of meetings and/or special features of the mission;",
+      "why": "(a) economy, including non-refundable, at the lowest available rates"
+    },
+    {
+      "lines": [
+        663,
+        664
+      ],
+      "sha256": "4103d64cb5c39d09076a643fb1918df33cedeafef0c11aaec7aed81b0745046f",
+      "quote": "Air travel for distances up to 550 km must be appropriately justified (40), and direct flights favoured when available, and within reasonable cost variations (40%). Economy class remains the default option.",
+      "why": "air up to 550 km must be justified; direct flights favoured within 40%; economy the default"
+    }
+  ],
+  "distractors": [
+    {
+      "lines": [
+        815,
+        818
+      ],
+      "quote": "if the total duration of the flights is at least 10 hours, the authorising officer for commitments may decide to grant the mission performer a rest period of up to 24 hours before the meetings",
+      "why": "a rest period after long flights, granted by the authorising officer; not a ticket rule"
+    },
+    {
+      "lines": [
+        844,
+        847
+      ],
+      "quote": "more than 6 hours but not more than 12 hours: 50% of the daily allowance",
+      "why": "daily allowance hours, not flight hours"
+    }
+  ],
+  "design_notes": "Business or premium economy would be allowed (a 760-775 minute segment, lines 707-710), but the traveller asks for economy: the lowest fare, Singapore Airlines 12:40 at EUR 695, landing on 1 February. The rest period after at least 10 hours of flights (lines 815-818) is for the authorising officer to grant at the destination; it changes no ticket."
+}

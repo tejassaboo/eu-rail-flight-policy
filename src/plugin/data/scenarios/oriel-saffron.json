@@ -1,0 +1,169 @@
+{
+  "id": "oriel-saffron",
+  "category": "multi_rule",
+  "overlays": [
+    "dearer_option"
+  ],
+  "twin_of": "zinnia-crest",
+  "twin_fact": "the person accompanied is a Member of the Commission or a Director-General",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "I'm accompanying the Commissioner to the Madrid ministerial meeting on 9 March. Her Cabinet has asked in writing for me to fly in the same class as her, business, so I can brief her on the way; she flies Iberia that morning. Please book that. If it isn't allowed, book what the policy allows; I have to be at the meeting.",
+  "trip": {
+    "traveller_name": "Anna Kowalska",
+    "traveller_title": "Adviser to the Commissioner's Cabinet",
+    "place_of_employment": "Paris",
+    "travel_kind": "MISSION",
+    "authorisation_pays_transport": false,
+    "journey": "OUTWARD",
+    "origin": "CDG",
+    "destination": "MAD",
+    "travel_date": "2027-03-09",
+    "booking_date": "2027-02-15",
+    "meeting_start_local": "2027-03-09 16:00",
+    "meeting_end_local": "",
+    "purpose": "Ministerial meeting in Madrid with the Commissioner",
+    "event_role": "ADVISER",
+    "same_dg_participants": 1,
+    "requested_cabin": "BUSINESS",
+    "wants_refundable": false,
+    "risk_of_change": false,
+    "chosen_airline": "",
+    "avoids_unrequired_hours": false,
+    "accompanies": "MEMBER_OF_COMMISSION",
+    "accompanied_cabin": "BUSINESS",
+    "rail_km": 0,
+    "rail_fare_cents": 0,
+    "rail_minutes": 0,
+    "air_justification": "",
+    "line_manager_is_authorising_officer": false,
+    "sign_offs": [
+      {
+        "role": "LINE_MANAGER",
+        "name": "Head of unit",
+        "subject": "MISSION_ORDER",
+        "note": "Mission order signed: purpose, dates and place of the mission"
+      },
+      {
+        "role": "AUTHORISING_OFFICER",
+        "name": "Authorising officer",
+        "subject": "MISSION_ORDER",
+        "note": "Mission order signed for the budget: the mission's cost estimate"
+      },
+      {
+        "role": "CABINET",
+        "name": "Head of the Commissioner's Cabinet",
+        "subject": "SAME_CLASS_REQUEST",
+        "note": "Written request: the adviser travels in the Commissioner's class to brief her on the flight; the reasons are set out in the mission order"
+      }
+    ]
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "CDG",
+        "destination": "MAD",
+        "date": "2027-03-09",
+        "return_date": "",
+        "background": 0,
+        "flights": {
+          "airfrance": {
+            "carrier": "AF",
+            "depart": "09:20",
+            "minutes": [
+              105
+            ]
+          },
+          "iberia": {
+            "carrier": "IB",
+            "depart": "10:05",
+            "minutes": [
+              110
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "airfrance-economy",
+            "flight": "airfrance",
+            "cabin": "ECONOMY",
+            "fare_cents": 15200
+          },
+          {
+            "slot": "airfrance-business",
+            "flight": "airfrance",
+            "cabin": "BUSINESS",
+            "fare_cents": 64000
+          },
+          {
+            "slot": "iberia-economy",
+            "flight": "iberia",
+            "cabin": "ECONOMY",
+            "fare_cents": 13900
+          },
+          {
+            "slot": "iberia-business",
+            "flight": "iberia",
+            "cabin": "BUSINESS",
+            "fare_cents": 59800
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "iberia-business"
+    ],
+    "cabins": [
+      "BUSINESS"
+    ],
+    "reason_codes": [
+      "SAME_CLASS_AS_MEMBER"
+    ],
+    "approvers": [
+      "AUTHORISING_OFFICER",
+      "CABINET",
+      "LINE_MANAGER",
+      "MEMBER_OF_COMMISSION",
+      "NONE"
+    ],
+    "clauses": [
+      "TRAVEL_BY_AIR"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        711,
+        714
+      ],
+      "sha256": "811d9f79e482b90bf5dabd802bf238bcbff0aed86e3516a918529047c6254898",
+      "quote": "As a derogation from points (a), (b) and (c), upon written request of the Member of the Commission or their Cabinet, where there are exceptional overriding service-related reasons, which have to be justified in the mission order , staff travelling on mission may be authorised to travel in the same class as the Member of the Commission they are accompanying.",
+      "why": "derogation: same class as the accompanied Member, on the Member's or Cabinet's written request"
+    },
+    {
+      "lines": [
+        707,
+        710
+      ],
+      "sha256": "eed3c21da496a8842787380d99668398363ffdf23e12025f78996ae1aa9891b9",
+      "quote": "c) in premium economy class when suitable, or business class or equivalent, at the lowest available rates, taking into account the times of meetings and/or special features of the mission, if the outward or return journey includes at least one segment involving at least five-hours of continuous flying time.",
+      "why": "(c) premium economy or business if a segment has at least five hours' continuous flying"
+    },
+    {
+      "lines": [
+        663,
+        664
+      ],
+      "sha256": "4103d64cb5c39d09076a643fb1918df33cedeafef0c11aaec7aed81b0745046f",
+      "quote": "Air travel for distances up to 550 km must be appropriately justified (40), and direct flights favoured when available, and within reasonable cost variations (40%). Economy class remains the default option.",
+      "why": "air up to 550 km must be justified; direct flights favoured within 40%; economy the default"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "A 105-110 minute flight allows only economy (lines 664, 707-710), but lines 711-714 let staff accompanying a Member of the Commission travel in the same class, on the written request of the Member or their Cabinet, with the reasons in the mission order. Both are on file: the cheapest business fare, Iberia at EUR 598."
+}

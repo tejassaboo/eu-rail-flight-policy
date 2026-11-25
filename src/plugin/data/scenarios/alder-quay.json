@@ -1,0 +1,208 @@
+{
+  "id": "alder-quay",
+  "category": "easy",
+  "overlays": [
+    "multi_traveller"
+  ],
+  "twin_of": "",
+  "twin_fact": "",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "I'm going to Madrid for the rail interoperability workshop, which opens at 09:30 on 10 December; two colleagues from my DG are coming too. Please book my flight from Paris on the 9th.",
+  "trip": {
+    "traveller_name": "Claire Dubois",
+    "traveller_title": "Policy officer, interoperability unit",
+    "place_of_employment": "Paris",
+    "travel_kind": "MISSION",
+    "authorisation_pays_transport": false,
+    "journey": "OUTWARD",
+    "origin": "CDG",
+    "destination": "MAD",
+    "travel_date": "2026-12-09",
+    "booking_date": "2026-11-25",
+    "meeting_start_local": "2026-12-10 09:30",
+    "meeting_end_local": "",
+    "purpose": "Rail interoperability workshop in Madrid",
+    "event_role": "PARTICIPANT",
+    "same_dg_participants": 3,
+    "requested_cabin": "ECONOMY",
+    "wants_refundable": false,
+    "risk_of_change": false,
+    "chosen_airline": "",
+    "avoids_unrequired_hours": false,
+    "accompanies": "NOBODY",
+    "accompanied_cabin": "NONE",
+    "rail_km": 0,
+    "rail_fare_cents": 0,
+    "rail_minutes": 0,
+    "air_justification": "",
+    "line_manager_is_authorising_officer": false,
+    "sign_offs": [
+      {
+        "role": "LINE_MANAGER",
+        "name": "Head of unit",
+        "subject": "MISSION_ORDER",
+        "note": "Mission order signed: purpose, dates and place of the mission"
+      },
+      {
+        "role": "AUTHORISING_OFFICER",
+        "name": "Authorising officer",
+        "subject": "MISSION_ORDER",
+        "note": "Mission order signed for the budget: the mission's cost estimate"
+      }
+    ]
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "CDG",
+        "destination": "MAD",
+        "date": "2026-12-09",
+        "return_date": "",
+        "background": 0,
+        "flights": {
+          "morning": {
+            "carrier": "AF",
+            "depart": "08:30",
+            "minutes": [
+              105
+            ]
+          },
+          "midday": {
+            "carrier": "IB",
+            "depart": "11:15",
+            "minutes": [
+              110
+            ]
+          },
+          "noon": {
+            "carrier": "AF",
+            "depart": "13:00",
+            "minutes": [
+              105
+            ]
+          },
+          "afternoon": {
+            "carrier": "AF",
+            "depart": "17:40",
+            "minutes": [
+              105
+            ]
+          },
+          "evening": {
+            "carrier": "IB",
+            "depart": "19:10",
+            "minutes": [
+              110
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "morning-economy",
+            "flight": "morning",
+            "cabin": "ECONOMY",
+            "fare_cents": 14800
+          },
+          {
+            "slot": "midday-economy",
+            "flight": "midday",
+            "cabin": "ECONOMY",
+            "fare_cents": 13200
+          },
+          {
+            "slot": "noon-economy",
+            "flight": "noon",
+            "cabin": "ECONOMY",
+            "fare_cents": 11900,
+            "seats": false
+          },
+          {
+            "slot": "afternoon-economy",
+            "flight": "afternoon",
+            "cabin": "ECONOMY",
+            "fare_cents": 17100
+          },
+          {
+            "slot": "evening-economy",
+            "flight": "evening",
+            "cabin": "ECONOMY",
+            "fare_cents": 13900
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "midday-economy"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "LOWEST_FARE"
+    ],
+    "approvers": [
+      "AUTHORISING_OFFICER",
+      "LINE_MANAGER",
+      "NONE"
+    ],
+    "clauses": [
+      "TRANSPORT_BETWEEN_PLACES",
+      "TRAVEL_BY_AIR"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        688,
+        691
+      ],
+      "sha256": "947ccf14ea092affcad4f3b3cd78ca7006d7c81eae32868db9ad7f83816c8686",
+      "quote": "As a general rule, you can book air travel: a) in economy class or equivalent, including cases where the ticket in question cannot be exchanged or refunded, at the lowest available rates, taking into account the times of meetings and/or special features of the mission;",
+      "why": "(a) economy, including non-refundable, at the lowest available rates"
+    },
+    {
+      "lines": [
+        663,
+        664
+      ],
+      "sha256": "4103d64cb5c39d09076a643fb1918df33cedeafef0c11aaec7aed81b0745046f",
+      "quote": "Air travel for distances up to 550 km must be appropriately justified (40), and direct flights favoured when available, and within reasonable cost variations (40%). Economy class remains the default option.",
+      "why": "air up to 550 km must be justified; direct flights favoured within 40%; economy the default"
+    },
+    {
+      "lines": [
+        426,
+        428
+      ],
+      "sha256": "3ea072e5b22d1368e892335f4b5abe08f748756d4bf5731a922a88b6ce39dc86",
+      "quote": "The mission performer can make final reservations , including confirmed reservations for tickets, accommodation and any other financial commitment connected with the mission once the authorising officer for commitments has signed the mission order.",
+      "why": "final reservations only once the authorising officer has signed the mission order"
+    },
+    {
+      "lines": [
+        364,
+        372
+      ],
+      "sha256": "936b96bb8c78739405105e6bff6f1d2249fddcb3925bfd295bea1a1718dc96f6",
+      "quote": "⎯ when physical presence is required , based on the interests of the service , the number of staff travelling to the same event should be limited to what is strictly necessary and be justified as follows: o when participation in a single meeting or event involves more than three staff members from the same Directorate-General, an authorisation at Director-General level is required (25). The Director-General, either on a case-by-case or general basis, may delegate this authorisation to senior management or to the HR Correspondent of the DG concerned or to another more appropriate entity of the DG concerned. It is up to each DG to define how to implement this authorisation;",
+      "why": "more than three staff of one DG at one meeting need a Director-General level authorisation, which may be delegated"
+    }
+  ],
+  "distractors": [
+    {
+      "lines": [
+        591,
+        592
+      ],
+      "quote": "staff should book their tickets at the earliest opportunity",
+      "why": "book early for missions planned well ahead; not a reason to hold or refuse"
+    }
+  ],
+  "design_notes": "Every flight is direct; economy at the lowest available rate (lines 664, 689-691): Iberia 11:15 at EUR 132. The cheaper 13:00 fare is sold out. Three staff of the DG attend, which is not more than three (lines 367-368), and the mission order is signed by the line manager and the authorising officer (lines 326-331, 426-428)."
+}

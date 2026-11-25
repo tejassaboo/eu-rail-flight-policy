@@ -1,0 +1,135 @@
+{
+  "id": "cobalt-meadow",
+  "category": "refusal",
+  "overlays": [
+    "personal_travel",
+    "outside_air_section"
+  ],
+  "twin_of": "",
+  "twin_fact": "",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "I'm visiting my parents in Rome over Christmas. Could you book my flight on 22 December through the mission system? I fly so much for work anyway.",
+  "trip": {
+    "traveller_name": "Lucia Romano",
+    "traveller_title": "Financial officer, budget unit",
+    "place_of_employment": "Madrid",
+    "travel_kind": "PRIVATE",
+    "authorisation_pays_transport": false,
+    "journey": "OUTWARD",
+    "origin": "MAD",
+    "destination": "FCO",
+    "travel_date": "2026-12-22",
+    "booking_date": "2026-11-30",
+    "meeting_start_local": "",
+    "meeting_end_local": "",
+    "purpose": "Family visit in Rome over Christmas",
+    "event_role": "PARTICIPANT",
+    "same_dg_participants": 1,
+    "requested_cabin": "ECONOMY",
+    "wants_refundable": false,
+    "risk_of_change": false,
+    "chosen_airline": "",
+    "avoids_unrequired_hours": false,
+    "accompanies": "NOBODY",
+    "accompanied_cabin": "NONE",
+    "rail_km": 0,
+    "rail_fare_cents": 0,
+    "rail_minutes": 0,
+    "air_justification": "",
+    "line_manager_is_authorising_officer": false,
+    "sign_offs": []
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "MAD",
+        "destination": "FCO",
+        "date": "2026-12-22",
+        "return_date": "",
+        "background": 0,
+        "flights": {
+          "morning": {
+            "carrier": "IB",
+            "depart": "10:30",
+            "minutes": [
+              125
+            ]
+          },
+          "evening": {
+            "carrier": "IB",
+            "depart": "17:45",
+            "minutes": [
+              125
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "morning-economy",
+            "flight": "morning",
+            "cabin": "ECONOMY",
+            "fare_cents": 14200
+          },
+          {
+            "slot": "evening-economy",
+            "flight": "evening",
+            "cabin": "ECONOMY",
+            "fare_cents": 16900
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "REFUSE",
+    "offer_slots": [],
+    "cabins": [
+      "NONE"
+    ],
+    "reason_codes": [
+      "OUTSIDE_POLICY_SCOPE",
+      "PERSONAL_TRAVEL_NOT_COVERED"
+    ],
+    "approvers": [
+      "NONE"
+    ],
+    "clauses": [
+      "MISSION_DEFINITION",
+      "SCOPE"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        174,
+        175
+      ],
+      "sha256": "3054e42374c88b827a7808f5d550f81ed2f8e6239eacad7367671e43fc7b848a",
+      "quote": "A mission (instruction to travel) is defined as travel away from the place of employment solely in the interests of the service on the instructions of a line manager.",
+      "why": "a mission is work travel on a line manager's instruction"
+    },
+    {
+      "lines": [
+        323,
+        325
+      ],
+      "sha256": "ba5f0615a4bc6fd0c6e9a7ff257bdde8c6be956a6e248a377512dcc941008628",
+      "quote": "A mission is travel away from the place of employment solely in the interests of the ser vice, on the instructions of a line manager. It is paid for out of the local mission budget of the Commission's services unless otherwise instructed (see 2.10).",
+      "why": "a mission is paid from the mission budget"
+    },
+    {
+      "lines": [
+        191,
+        193
+      ],
+      "sha256": "3cae07343f4dafec675fb4e4814a7ed1b43d3ee7b1141838dcddcbcedd8e211f",
+      "quote": "Authorised travel is a travel away from the place of employment, undertaken by a staff member , both in the personal interest of the staff member and in the interests of the institution, with a link to their professional tasks. It is covered by an authorisation to travel. See Section 3.",
+      "why": "authorised travel: an outside event of personal and institutional interest"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "A mission is travel solely in the interests of the service on a line manager's instruction, paid from the mission budget (lines 174-175, 323-325); authorised travel needs a link to the traveller's work (lines 191-193). A family visit is neither: the organisation buys no ticket."
+}

@@ -1,0 +1,16 @@
+{
+  "id": "eu-rail-flight-policy",
+  "name": "EU Rail Guide to Missions Flight Booking",
+  "slug": "eu-rail-missions",
+  "title": "Europe's Rail Joint Undertaking, Governing Board Decision 11/2025 applying Commission Decision C(2025) 2495 (Guide to Missions and Authorised Travel)",
+  "frozen_file": "eu-rail-missions_policy.txt",
+  "sha256": "c643695815869f228f7ea0c5e3d45d8a009bf5596baf7dd60b9d336a9f1292e9",
+  "raw_pdf_sha256": "34268dbf27090572c7608db77432129a24af9019a106fb76605b7e47f1c5a379",
+  "words": 16083,
+  "lines": 1360,
+  "source": "https://rail-research.europa.eu/wp-content/uploads/2026/01/Guide-to-Missions-and-Authorised-Travel.pdf",
+  "frozen_on": "2026-11-24",
+  "scenario_count": 32,
+  "currency": "EUR",
+  "background_offers": 0
+}

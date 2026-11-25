@@ -1,0 +1,13 @@
+_ > nanoagent.plugin.v0001.ProductConfig:
+tagline: "One flight request, the EU's real guide to missions: book it, refuse it, or hold it for sign-off"
+summary: "An agent handles one staff member's flight request under the Guide to Missions and Authorised Travel (Commission Decision C(2025) 2495, as applied by Europe's Rail Joint Undertaking), read verbatim. It reads the trip record, searches a simulated flight world (real airports and airlines, synthetic schedules and fares in euros) and submits a decision with the offer, cabin, reason, approver and guide section. A deterministic verifier rebuilds the offers and the guide's answer itself and checks every field. Thirty-two cases cover the five-hour segment rule on both sides, take-off and landing hours, the return after the last meeting, rail against air, direct flights, flexible fares, the Commissioner's same-class derogation, signatures on the mission order, and the guide's own unclear words."
+highlights:
+  - "The verbatim guide: no paraphrase, no rules restated in the task"
+  - "Exact boundaries: 300 against 295 scheduled minutes, 08:00 against 07:55, 210 against 215 minutes after the meeting"
+  - "Rail alternatives as facts in the trip record, never as a search"
+  - "Unclear clauses become holds for approval, each once, with clear twins on both sides"
+steps:
+  - "Name a case, for example alder-quay, with the traveller's request"
+  - "The agent reads the trip record and searches flights on the trip's route and date"
+  - "It submits BOOK, REFUSE or FLAG_FOR_APPROVAL with the offer, cabin, reason, approver and section"
+  - "The verifier recomputes the guide's answer and checks every field"

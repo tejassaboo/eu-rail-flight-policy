@@ -1,0 +1,166 @@
+{
+  "id": "sorrel-gantry",
+  "category": "multi_rule",
+  "overlays": [],
+  "twin_of": "fern-ledger",
+  "twin_fact": "risk_of_change true or false (the request says the audit may move or not)",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "Please book my flight from Munich to Madrid on 16 February for the audit, which starts the next morning. I'd like a ticket I can change, just in case. If that isn't allowed, book what the policy allows; I have to be at the audit.",
+  "trip": {
+    "traveller_name": "Lena Hoffmann",
+    "traveller_title": "Auditor, internal audit",
+    "place_of_employment": "Munich",
+    "travel_kind": "MISSION",
+    "authorisation_pays_transport": false,
+    "journey": "OUTWARD",
+    "origin": "MUC",
+    "destination": "MAD",
+    "travel_date": "2027-02-16",
+    "booking_date": "2027-01-18",
+    "meeting_start_local": "2027-02-17 09:30",
+    "meeting_end_local": "",
+    "purpose": "Audit visit in Madrid, date confirmed",
+    "event_role": "AUDITOR",
+    "same_dg_participants": 1,
+    "requested_cabin": "ECONOMY",
+    "wants_refundable": true,
+    "risk_of_change": false,
+    "chosen_airline": "",
+    "avoids_unrequired_hours": false,
+    "accompanies": "NOBODY",
+    "accompanied_cabin": "NONE",
+    "rail_km": 0,
+    "rail_fare_cents": 0,
+    "rail_minutes": 0,
+    "air_justification": "",
+    "line_manager_is_authorising_officer": false,
+    "sign_offs": [
+      {
+        "role": "LINE_MANAGER",
+        "name": "Head of unit",
+        "subject": "MISSION_ORDER",
+        "note": "Mission order signed: purpose, dates and place of the mission"
+      },
+      {
+        "role": "AUTHORISING_OFFICER",
+        "name": "Authorising officer",
+        "subject": "MISSION_ORDER",
+        "note": "Mission order signed for the budget: the mission's cost estimate"
+      }
+    ]
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "MUC",
+        "destination": "MAD",
+        "date": "2027-02-16",
+        "return_date": "",
+        "background": 0,
+        "flights": {
+          "morning": {
+            "carrier": "LH",
+            "depart": "09:00",
+            "minutes": [
+              140
+            ]
+          },
+          "noon": {
+            "carrier": "IB",
+            "depart": "12:40",
+            "minutes": [
+              135
+            ]
+          },
+          "evening": {
+            "carrier": "LH",
+            "depart": "17:20",
+            "minutes": [
+              140
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "morning-saver",
+            "flight": "morning",
+            "cabin": "ECONOMY",
+            "fare_cents": 16800
+          },
+          {
+            "slot": "morning-flex",
+            "flight": "morning",
+            "cabin": "ECONOMY",
+            "fare_cents": 24900,
+            "refundable": true
+          },
+          {
+            "slot": "noon-saver",
+            "flight": "noon",
+            "cabin": "ECONOMY",
+            "fare_cents": 15900
+          },
+          {
+            "slot": "noon-flex",
+            "flight": "noon",
+            "cabin": "ECONOMY",
+            "fare_cents": 26200,
+            "refundable": true
+          },
+          {
+            "slot": "evening-saver",
+            "flight": "evening",
+            "cabin": "ECONOMY",
+            "fare_cents": 18100
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "noon-saver"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "REFUNDABLE_FARE_NOT_ALLOWED"
+    ],
+    "approvers": [
+      "AUTHORISING_OFFICER",
+      "LINE_MANAGER",
+      "NONE"
+    ],
+    "clauses": [
+      "TRANSPORT_BETWEEN_PLACES",
+      "TRAVEL_BY_AIR"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        688,
+        691
+      ],
+      "sha256": "947ccf14ea092affcad4f3b3cd78ca7006d7c81eae32868db9ad7f83816c8686",
+      "quote": "As a general rule, you can book air travel: a) in economy class or equivalent, including cases where the ticket in question cannot be exchanged or refunded, at the lowest available rates, taking into account the times of meetings and/or special features of the mission;",
+      "why": "(a) economy, including non-refundable, at the lowest available rates"
+    },
+    {
+      "lines": [
+        704,
+        706
+      ],
+      "sha256": "9854b816942bd1741901bf37e17f6d01c25df5ead555f84fded3c62d1c876f83",
+      "quote": "b) in economy class or equivalent, at t he lowest available rates for flexible tickets, taking into account the times of meetings and/or special features of the mission, if there is a risk that the mission will be cancelled or amended;",
+      "why": "(b) economy at the lowest flexible rates if the mission risks cancellation"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "Flexible tickets are for a mission at risk of being cancelled or amended (lines 704-706); nothing on file says so. Under (a), lines 689-691, economy including non-refundable tickets at the lowest available rate: Iberia 12:40 at EUR 159. The changeable fare is declined on (b)'s condition, so the reason is REFUNDABLE_FARE_NOT_ALLOWED."
+}

@@ -1,0 +1,178 @@
+{
+  "id": "linden-ferrule",
+  "category": "boundary_twin",
+  "overlays": [
+    "date_arithmetic"
+  ],
+  "twin_of": "kestrel-mallow",
+  "twin_fact": "the cheapest flight leaves at 18:35 or 18:30",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "My last meeting at the Madrid workshop ends at 15:00 on 11 December. Please book my flight back to Paris that day.",
+  "trip": {
+    "traveller_name": "Hugo Lefevre",
+    "traveller_title": "Legal officer, legal affairs",
+    "place_of_employment": "Paris",
+    "travel_kind": "MISSION",
+    "authorisation_pays_transport": false,
+    "journey": "RETURN",
+    "origin": "MAD",
+    "destination": "CDG",
+    "travel_date": "2026-12-11",
+    "booking_date": "2026-11-26",
+    "meeting_start_local": "",
+    "meeting_end_local": "2026-12-11 15:00",
+    "purpose": "Return from the workshop in Madrid",
+    "event_role": "PARTICIPANT",
+    "same_dg_participants": 1,
+    "requested_cabin": "ECONOMY",
+    "wants_refundable": false,
+    "risk_of_change": false,
+    "chosen_airline": "",
+    "avoids_unrequired_hours": false,
+    "accompanies": "NOBODY",
+    "accompanied_cabin": "NONE",
+    "rail_km": 0,
+    "rail_fare_cents": 0,
+    "rail_minutes": 0,
+    "air_justification": "",
+    "line_manager_is_authorising_officer": false,
+    "sign_offs": [
+      {
+        "role": "LINE_MANAGER",
+        "name": "Head of unit",
+        "subject": "MISSION_ORDER",
+        "note": "Mission order signed: purpose, dates and place of the mission"
+      },
+      {
+        "role": "AUTHORISING_OFFICER",
+        "name": "Authorising officer",
+        "subject": "MISSION_ORDER",
+        "note": "Mission order signed for the budget: the mission's cost estimate"
+      }
+    ]
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "MAD",
+        "destination": "CDG",
+        "date": "2026-12-11",
+        "return_date": "",
+        "background": 0,
+        "flights": {
+          "early": {
+            "carrier": "IB",
+            "depart": "16:50",
+            "minutes": [
+              110
+            ]
+          },
+          "mid": {
+            "carrier": "AF",
+            "depart": "17:25",
+            "minutes": [
+              105
+            ]
+          },
+          "saver": {
+            "carrier": "IB",
+            "depart": "18:30",
+            "minutes": [
+              110
+            ]
+          },
+          "late": {
+            "carrier": "AF",
+            "depart": "20:05",
+            "minutes": [
+              105
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "early-economy",
+            "flight": "early",
+            "cabin": "ECONOMY",
+            "fare_cents": 18200
+          },
+          {
+            "slot": "mid-economy",
+            "flight": "mid",
+            "cabin": "ECONOMY",
+            "fare_cents": 17600
+          },
+          {
+            "slot": "saver-economy",
+            "flight": "saver",
+            "cabin": "ECONOMY",
+            "fare_cents": 12800
+          },
+          {
+            "slot": "late-economy",
+            "flight": "late",
+            "cabin": "ECONOMY",
+            "fare_cents": 13900
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "saver-economy"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "LOWEST_FARE",
+      "RETURN_START_LIMIT"
+    ],
+    "approvers": [
+      "AUTHORISING_OFFICER",
+      "LINE_MANAGER",
+      "NONE"
+    ],
+    "clauses": [
+      "DEPARTURE_RETURN",
+      "TRANSPORT_BETWEEN_PLACES",
+      "TRAVEL_BY_AIR"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        583,
+        587
+      ],
+      "sha256": "896c0cbf4afbab47a7d5a0f07d9028fb8d75217455e4e58442674403ca479f55",
+      "quote": "The return journey , while respecting the principles of minimising the environmental impact and ensuring cost efficiency, must be, in principle, started: ⎯ in the case of travel by air, not more than three-and-a-half hours after the end of the meeting(s); ⎯ in the case of travel by any other means of transport, not more than two hours after the end of the meeting(s).",
+      "why": "a return by air starts not more than three-and-a-half hours after the meeting ends"
+    },
+    {
+      "lines": [
+        688,
+        691
+      ],
+      "sha256": "947ccf14ea092affcad4f3b3cd78ca7006d7c81eae32868db9ad7f83816c8686",
+      "quote": "As a general rule, you can book air travel: a) in economy class or equivalent, including cases where the ticket in question cannot be exchanged or refunded, at the lowest available rates, taking into account the times of meetings and/or special features of the mission;",
+      "why": "(a) economy, including non-refundable, at the lowest available rates"
+    }
+  ],
+  "distractors": [
+    {
+      "lines": [
+        586,
+        587
+      ],
+      "quote": "in the case of travel by any other means of transport, not more than two hours after the end of the meeting(s)",
+      "why": "the two-hour limit is for other transport, not air"
+    }
+  ],
+  "design_notes": "The cheapest flight leaves at 18:30, exactly 210 minutes after the 15:00 end: 'not more than three-and-a-half hours' is inclusive (lines 583-585). Book Iberia at EUR 128."
+}

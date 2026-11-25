@@ -1,0 +1,171 @@
+{
+  "id": "ember-thimble",
+  "category": "flag",
+  "overlays": [
+    "dearer_option",
+    "unclear_phrase"
+  ],
+  "twin_of": "",
+  "twin_fact": "",
+  "flag_twins": [
+    "cedar-mosaic",
+    "dune-orchard"
+  ],
+  "ambiguity_note": {
+    "phrase": "This should also be the choice, for example, if the flight is not overnight or when there is no meeting immediately after arrival",
+    "readings": [
+      "'should' sets the choice: on a daytime flight with no meeting on arrival, premium economy, the Lufthansa premium economy fare",
+      "(c) allows business and 'should' only advises: the business seat asked for, the Lufthansa business fare"
+    ]
+  },
+  "request": "Business class please for the Dubai metro signalling review, which starts the morning after I land. If the guide wants something else, book that.",
+  "trip": {
+    "traveller_name": "Florian Weber",
+    "traveller_title": "Head of sector, signalling",
+    "place_of_employment": "Munich",
+    "travel_kind": "MISSION",
+    "authorisation_pays_transport": false,
+    "journey": "OUTWARD",
+    "origin": "MUC",
+    "destination": "DXB",
+    "travel_date": "2027-03-01",
+    "booking_date": "2027-02-01",
+    "meeting_start_local": "2027-03-02 09:00",
+    "meeting_end_local": "",
+    "purpose": "Metro signalling review in Dubai",
+    "event_role": "PARTICIPANT",
+    "same_dg_participants": 1,
+    "requested_cabin": "BUSINESS",
+    "wants_refundable": false,
+    "risk_of_change": false,
+    "chosen_airline": "",
+    "avoids_unrequired_hours": false,
+    "accompanies": "NOBODY",
+    "accompanied_cabin": "NONE",
+    "rail_km": 0,
+    "rail_fare_cents": 0,
+    "rail_minutes": 0,
+    "air_justification": "",
+    "line_manager_is_authorising_officer": false,
+    "sign_offs": [
+      {
+        "role": "LINE_MANAGER",
+        "name": "Head of unit",
+        "subject": "MISSION_ORDER",
+        "note": "Mission order signed: purpose, dates and place of the mission"
+      },
+      {
+        "role": "AUTHORISING_OFFICER",
+        "name": "Authorising officer",
+        "subject": "MISSION_ORDER",
+        "note": "Mission order signed for the budget: the mission's cost estimate"
+      }
+    ]
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "MUC",
+        "destination": "DXB",
+        "date": "2027-03-01",
+        "return_date": "",
+        "background": 0,
+        "flights": {
+          "lufthansa": {
+            "carrier": "LH",
+            "depart": "10:05",
+            "minutes": [
+              355
+            ]
+          },
+          "emirates": {
+            "carrier": "EK",
+            "depart": "12:40",
+            "minutes": [
+              350
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "lufthansa-economy",
+            "flight": "lufthansa",
+            "cabin": "ECONOMY",
+            "fare_cents": 56000
+          },
+          {
+            "slot": "lufthansa-premium",
+            "flight": "lufthansa",
+            "cabin": "PREMIUM_ECONOMY",
+            "fare_cents": 124000
+          },
+          {
+            "slot": "lufthansa-business",
+            "flight": "lufthansa",
+            "cabin": "BUSINESS",
+            "fare_cents": 298000
+          },
+          {
+            "slot": "emirates-economy",
+            "flight": "emirates",
+            "cabin": "ECONOMY",
+            "fare_cents": 54500
+          },
+          {
+            "slot": "emirates-business",
+            "flight": "emirates",
+            "cabin": "BUSINESS",
+            "fare_cents": 315000
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "FLAG_FOR_APPROVAL",
+    "offer_slots": [
+      "lufthansa-business",
+      "lufthansa-premium"
+    ],
+    "cabins": [
+      "BUSINESS",
+      "PREMIUM_ECONOMY"
+    ],
+    "reason_codes": [
+      "APPROVAL_REQUIRED",
+      "UNCLEAR_POLICY_TEXT"
+    ],
+    "approvers": [
+      "AUTHORISING_OFFICER",
+      "NOT_NAMED"
+    ],
+    "clauses": [
+      "SMART_TRAVELLING",
+      "TRAVEL_BY_AIR"
+    ],
+    "unclear_phrase": "This should also be the choice, for example, if the flight is not overnight or when there is no meeting immediately after arrival"
+  },
+  "must_keep": [
+    {
+      "lines": [
+        707,
+        710
+      ],
+      "sha256": "eed3c21da496a8842787380d99668398363ffdf23e12025f78996ae1aa9891b9",
+      "quote": "c) in premium economy class when suitable, or business class or equivalent, at the lowest available rates, taking into account the times of meetings and/or special features of the mission, if the outward or return journey includes at least one segment involving at least five-hours of continuous flying time.",
+      "why": "(c) premium economy or business if a segment has at least five hours' continuous flying"
+    },
+    {
+      "lines": [
+        665,
+        668
+      ],
+      "sha256": "2c94c25d48f4f6af5a0bb33362af3187573d506869e899575ea90b404e121c92",
+      "quote": "However, when business class is allowed ( i.e. when one segment of the travel involves at least five hours' continuous flying time), premium economy (41) should be envisaged, when available. This should also be the choice, for example, if the flight is not overnight or when there is no meeting immediately after arrival.",
+      "why": "when business is allowed, premium economy should be envisaged and chosen in some cases"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "Both nonstops fly 350-355 minutes, so (c) allows 'premium economy class when suitable, or business class' (lines 707-710). Lines 665-668: premium economy should be envisaged when available, and 'should also be the choice' if the flight is not overnight or no meeting follows arrival: this daytime flight lands at 19:00 and the review starts the next morning. Whether that 'should' rules out the business seat (c) allows is open: hold the cheapest premium economy or business fare."
+}

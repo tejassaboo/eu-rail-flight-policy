@@ -1,0 +1,168 @@
+{
+  "id": "umber-glade",
+  "category": "hidden_clause",
+  "overlays": [
+    "outside_air_section"
+  ],
+  "twin_of": "",
+  "twin_fact": "",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "My mission order for the Madrid workshop on 25 February is signed. Please book my flight from Dublin on the 24th.",
+  "trip": {
+    "traveller_name": "Sean Murphy",
+    "traveller_title": "Policy officer, Dublin liaison office",
+    "place_of_employment": "Dublin",
+    "travel_kind": "MISSION",
+    "authorisation_pays_transport": false,
+    "journey": "OUTWARD",
+    "origin": "DUB",
+    "destination": "MAD",
+    "travel_date": "2027-02-24",
+    "booking_date": "2027-02-01",
+    "meeting_start_local": "2027-02-25 09:00",
+    "meeting_end_local": "",
+    "purpose": "Workshop in Madrid",
+    "event_role": "PARTICIPANT",
+    "same_dg_participants": 1,
+    "requested_cabin": "ECONOMY",
+    "wants_refundable": false,
+    "risk_of_change": false,
+    "chosen_airline": "",
+    "avoids_unrequired_hours": false,
+    "accompanies": "NOBODY",
+    "accompanied_cabin": "NONE",
+    "rail_km": 0,
+    "rail_fare_cents": 0,
+    "rail_minutes": 0,
+    "air_justification": "",
+    "line_manager_is_authorising_officer": true,
+    "sign_offs": [
+      {
+        "role": "LINE_MANAGER",
+        "name": "Head of office",
+        "subject": "MISSION_ORDER",
+        "note": "Mission order signed: purpose, dates, place and cost estimate"
+      }
+    ]
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "DUB",
+        "destination": "MAD",
+        "date": "2027-02-24",
+        "return_date": "",
+        "background": 0,
+        "flights": {
+          "morning": {
+            "carrier": "IB",
+            "depart": "09:15",
+            "minutes": [
+              140
+            ]
+          },
+          "midday": {
+            "carrier": "EI",
+            "depart": "11:40",
+            "minutes": [
+              140
+            ]
+          },
+          "afternoon": {
+            "carrier": "IB",
+            "depart": "15:30",
+            "minutes": [
+              140
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "morning-economy",
+            "flight": "morning",
+            "cabin": "ECONOMY",
+            "fare_cents": 15600
+          },
+          {
+            "slot": "midday-economy",
+            "flight": "midday",
+            "cabin": "ECONOMY",
+            "fare_cents": 14900
+          },
+          {
+            "slot": "afternoon-economy",
+            "flight": "afternoon",
+            "cabin": "ECONOMY",
+            "fare_cents": 16200
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "midday-economy"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "LOWEST_FARE"
+    ],
+    "approvers": [
+      "AUTHORISING_OFFICER",
+      "LINE_MANAGER",
+      "NONE"
+    ],
+    "clauses": [
+      "MISSION_DEFINITION",
+      "MISSION_ORDERS",
+      "TRANSPORT_BETWEEN_PLACES",
+      "TRAVEL_BY_AIR"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        326,
+        331
+      ],
+      "sha256": "330c8f5b6e958444513a6513d6983ca7d6db8b360887d325737ce56672dc78e0",
+      "quote": "A mission order must be signed by the line manager, whose signature constitutes an instruction to the mission performer. The line manager may also be the authorising officer for commitments. If that is not the case, the mission order must also be signed by the authorising officer for commitments, whose signature constitutes a legal commitment within the meaning of Regulation (EU, Euratom) 2024/2509 (the Financial Regulation) 20).",
+      "why": "the mission order is signed by the line manager and, if another person, the authorising officer"
+    },
+    {
+      "lines": [
+        273,
+        275
+      ],
+      "sha256": "ddef5dfe10d30e2826118409a775850db95c09c68d4c7a04dadd042f578ead9a",
+      "quote": "The authorising officer for commitments may be the same person as the line manager.",
+      "why": "footnote 15: the line manager may be the authorising officer"
+    },
+    {
+      "lines": [
+        426,
+        428
+      ],
+      "sha256": "3ea072e5b22d1368e892335f4b5abe08f748756d4bf5731a922a88b6ce39dc86",
+      "quote": "The mission performer can make final reservations , including confirmed reservations for tickets, accommodation and any other financial commitment connected with the mission once the authorising officer for commitments has signed the mission order.",
+      "why": "final reservations only once the authorising officer has signed the mission order"
+    },
+    {
+      "lines": [
+        688,
+        691
+      ],
+      "sha256": "947ccf14ea092affcad4f3b3cd78ca7006d7c81eae32868db9ad7f83816c8686",
+      "quote": "As a general rule, you can book air travel: a) in economy class or equivalent, including cases where the ticket in question cannot be exchanged or refunded, at the lowest available rates, taking into account the times of meetings and/or special features of the mission;",
+      "why": "(a) economy, including non-refundable, at the lowest available rates"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "Only the line manager has signed, but the record says the line manager is also the person who commits the budget: the authorising officer for commitments may be the same person as the line manager (lines 328 and footnote 15, lines 273-275), so the mission order is signed and tickets may be reserved (lines 426-428). The lowest fare: Aer Lingus 11:40 at EUR 149."
+}

@@ -1,0 +1,178 @@
+{
+  "id": "fennel-quarry",
+  "category": "flag",
+  "overlays": [
+    "approval_required",
+    "outside_air_section"
+  ],
+  "twin_of": "",
+  "twin_fact": "",
+  "flag_twins": [
+    "umber-glade",
+    "alder-quay"
+  ],
+  "ambiguity_note": "none: the authorising officer's signature is required and missing; the text is clear",
+  "request": "My head of unit has signed my mission order for the Paris meeting on 18 February. Please book the cheapest ticket on the 17th now, before prices go up.",
+  "trip": {
+    "traveller_name": "Roberto Conti",
+    "traveller_title": "Policy officer, Rome liaison office",
+    "place_of_employment": "Rome",
+    "travel_kind": "MISSION",
+    "authorisation_pays_transport": false,
+    "journey": "OUTWARD",
+    "origin": "FCO",
+    "destination": "CDG",
+    "travel_date": "2027-02-17",
+    "booking_date": "2027-01-27",
+    "meeting_start_local": "2027-02-18 09:30",
+    "meeting_end_local": "",
+    "purpose": "Meeting with the French rail regulator in Paris",
+    "event_role": "PARTICIPANT",
+    "same_dg_participants": 1,
+    "requested_cabin": "ECONOMY",
+    "wants_refundable": false,
+    "risk_of_change": false,
+    "chosen_airline": "",
+    "avoids_unrequired_hours": false,
+    "accompanies": "NOBODY",
+    "accompanied_cabin": "NONE",
+    "rail_km": 0,
+    "rail_fare_cents": 0,
+    "rail_minutes": 0,
+    "air_justification": "",
+    "line_manager_is_authorising_officer": false,
+    "sign_offs": [
+      {
+        "role": "LINE_MANAGER",
+        "name": "Head of unit",
+        "subject": "MISSION_ORDER",
+        "note": "Mission order signed: purpose, dates and place"
+      }
+    ]
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "FCO",
+        "destination": "CDG",
+        "date": "2027-02-17",
+        "return_date": "",
+        "background": 0,
+        "flights": {
+          "morning": {
+            "carrier": "AF",
+            "depart": "09:40",
+            "minutes": [
+              125
+            ]
+          },
+          "midday": {
+            "carrier": "AF",
+            "depart": "13:15",
+            "minutes": [
+              125
+            ]
+          },
+          "evening": {
+            "carrier": "AF",
+            "depart": "17:50",
+            "minutes": [
+              125
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "morning-economy",
+            "flight": "morning",
+            "cabin": "ECONOMY",
+            "fare_cents": 13400
+          },
+          {
+            "slot": "midday-economy",
+            "flight": "midday",
+            "cabin": "ECONOMY",
+            "fare_cents": 12800
+          },
+          {
+            "slot": "evening-economy",
+            "flight": "evening",
+            "cabin": "ECONOMY",
+            "fare_cents": 14600
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "FLAG_FOR_APPROVAL",
+    "offer_slots": [
+      "midday-economy"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "APPROVAL_REQUIRED",
+      "MISSION_ORDER_NOT_SIGNED"
+    ],
+    "approvers": [
+      "AUTHORISING_OFFICER"
+    ],
+    "clauses": [
+      "MISSION_DEFINITION",
+      "MISSION_ORDERS"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        326,
+        331
+      ],
+      "sha256": "330c8f5b6e958444513a6513d6983ca7d6db8b360887d325737ce56672dc78e0",
+      "quote": "A mission order must be signed by the line manager, whose signature constitutes an instruction to the mission performer. The line manager may also be the authorising officer for commitments. If that is not the case, the mission order must also be signed by the authorising officer for commitments, whose signature constitutes a legal commitment within the meaning of Regulation (EU, Euratom) 2024/2509 (the Financial Regulation) 20).",
+      "why": "the mission order is signed by the line manager and, if another person, the authorising officer"
+    },
+    {
+      "lines": [
+        426,
+        428
+      ],
+      "sha256": "3ea072e5b22d1368e892335f4b5abe08f748756d4bf5731a922a88b6ce39dc86",
+      "quote": "The mission performer can make final reservations , including confirmed reservations for tickets, accommodation and any other financial commitment connected with the mission once the authorising officer for commitments has signed the mission order.",
+      "why": "final reservations only once the authorising officer has signed the mission order"
+    },
+    {
+      "lines": [
+        432,
+        437
+      ],
+      "sha256": "dd26355e3aa8bd720f103ca71d1fed40b8f2fe5ecf5e01e15f90c779d93b1503",
+      "quote": "⎯ subject to the same provis ions, any financial commitment , such as unrefundable and unchangeable hotel bookings and unrefundable tickets, chosen by the mission performer , without the approval of the authorising officer for commitments , may be recovered either by offsetting (28) or by means of a recovery order in accordance with the Financial Regulation. This may be considered to be serious misconduct , for which the mission performer will be held financially liable.",
+      "why": "unrefundable tickets chosen without the authorising officer's approval may be recovered"
+    },
+    {
+      "lines": [
+        688,
+        691
+      ],
+      "sha256": "947ccf14ea092affcad4f3b3cd78ca7006d7c81eae32868db9ad7f83816c8686",
+      "quote": "As a general rule, you can book air travel: a) in economy class or equivalent, including cases where the ticket in question cannot be exchanged or refunded, at the lowest available rates, taking into account the times of meetings and/or special features of the mission;",
+      "why": "(a) economy, including non-refundable, at the lowest available rates"
+    }
+  ],
+  "distractors": [
+    {
+      "lines": [
+        591,
+        592
+      ],
+      "quote": "staff should book their tickets at the earliest opportunity",
+      "why": "book early for missions planned well ahead; not a reason to hold or refuse"
+    }
+  ],
+  "design_notes": "Only the line manager has signed, and the record says the line manager is not the person who commits the budget. If they are not the same person the mission order must also be signed by the authorising officer for commitments (lines 328-331), and tickets are reserved only once they have signed (lines 426-428; an unrefundable ticket bought without that approval may be recovered, lines 432-437). Hold the lowest fare, Air France 13:15 at EUR 128."
+}

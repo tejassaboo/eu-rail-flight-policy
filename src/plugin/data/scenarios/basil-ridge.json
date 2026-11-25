@@ -1,0 +1,174 @@
+{
+  "id": "basil-ridge",
+  "category": "refusal",
+  "overlays": [
+    "personal_travel",
+    "outside_air_section"
+  ],
+  "twin_of": "quill-harrow",
+  "twin_fact": "the signed authorisation pays the transport or has no expenses",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "My authorisation to travel for the rail-history conference at Trinity College Dublin was signed without expenses: I'm paying my own way. Could you book my flight on 10 February through the organisation anyway?",
+  "trip": {
+    "traveller_name": "Aoife Byrne",
+    "traveller_title": "Communication officer, communication unit",
+    "place_of_employment": "Paris",
+    "travel_kind": "AUTHORISED_TRAVEL",
+    "authorisation_pays_transport": false,
+    "journey": "OUTWARD",
+    "origin": "CDG",
+    "destination": "DUB",
+    "travel_date": "2027-02-10",
+    "booking_date": "2027-01-14",
+    "meeting_start_local": "2027-02-11 09:30",
+    "meeting_end_local": "",
+    "purpose": "Speaking at a rail-history conference at Trinity College Dublin",
+    "event_role": "SPEAKER",
+    "same_dg_participants": 1,
+    "requested_cabin": "ECONOMY",
+    "wants_refundable": false,
+    "risk_of_change": false,
+    "chosen_airline": "",
+    "avoids_unrequired_hours": false,
+    "accompanies": "NOBODY",
+    "accompanied_cabin": "NONE",
+    "rail_km": 0,
+    "rail_fare_cents": 0,
+    "rail_minutes": 0,
+    "air_justification": "",
+    "line_manager_is_authorising_officer": false,
+    "sign_offs": [
+      {
+        "role": "LINE_MANAGER",
+        "name": "Head of unit",
+        "subject": "AUTHORISATION_TO_TRAVEL",
+        "note": "Authorisation to travel signed without expenses"
+      },
+      {
+        "role": "AUTHORISING_OFFICER",
+        "name": "Authorising officer",
+        "subject": "AUTHORISATION_TO_TRAVEL",
+        "note": "Authorisation to travel signed with a cost estimate of zero"
+      }
+    ]
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "CDG",
+        "destination": "DUB",
+        "date": "2027-02-10",
+        "return_date": "",
+        "background": 0,
+        "flights": {
+          "morning": {
+            "carrier": "EI",
+            "depart": "10:40",
+            "minutes": [
+              90
+            ]
+          },
+          "noon": {
+            "carrier": "AF",
+            "depart": "12:15",
+            "minutes": [
+              90
+            ]
+          },
+          "evening": {
+            "carrier": "EI",
+            "depart": "16:55",
+            "minutes": [
+              90
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "morning-economy",
+            "flight": "morning",
+            "cabin": "ECONOMY",
+            "fare_cents": 11800
+          },
+          {
+            "slot": "noon-economy",
+            "flight": "noon",
+            "cabin": "ECONOMY",
+            "fare_cents": 13100
+          },
+          {
+            "slot": "evening-economy",
+            "flight": "evening",
+            "cabin": "ECONOMY",
+            "fare_cents": 12400
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "REFUSE",
+    "offer_slots": [],
+    "cabins": [
+      "NONE"
+    ],
+    "reason_codes": [
+      "OUTSIDE_POLICY_SCOPE",
+      "PERSONAL_TRAVEL_NOT_COVERED",
+      "TRAVEL_COSTS_NOT_COVERED"
+    ],
+    "approvers": [
+      "AUTHORISING_OFFICER",
+      "LINE_MANAGER",
+      "NONE"
+    ],
+    "clauses": [
+      "AUTHORISATION_TO_TRAVEL",
+      "AUTHORISED_TRAVEL_EXPENSES",
+      "AUTHORISED_TRAVEL_RULES"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        1085,
+        1088
+      ],
+      "sha256": "55a7cd45e40478eb8589d098d9a87d36c577aa8814f8804bc4b8bb0f776bb9e4",
+      "quote": "Depending on the extent to which the event may be considered to be in the interest of the service, the Commission may not finance any cost of the authorised travel, finance the authorised travel in part, or finance it in full . Financing may include transport costs, attendance fees for an outside event, and/or daily subsistence allowance. Authorisation to travel may, where necessary, entail a cost for the budget.",
+      "why": "authorised travel may be financed in none, part or full"
+    },
+    {
+      "lines": [
+        1199,
+        1203
+      ],
+      "sha256": "cecf9e22985bd3a0ec374439508175f6fd94cf4a3dab672c1e27112c31aea839",
+      "quote": "Once the authorisation has been signed by the staff me mber's line manager and, if necessary, by the authorising officer for commitments , the staff member is formally authorised to travel and incur expenses within the limits set out in the authorisation. The final reservation of tickets, accommodation and any other financial commitment connected with the trip is therefore made after the authorisation has been signed.",
+      "why": "the signed authorisation allows expenses within its limits"
+    },
+    {
+      "lines": [
+        1210,
+        1213
+      ],
+      "sha256": "13f81240f1f587eea7c01f372da75d6f163f68590ccdc27773c1b4612e084e9f",
+      "quote": "If the authorisation to travel was approved without expenses and the line manager and authorising officer for commitments ultimately wish to cover the cost of certain expenses incurred by the person concerned, the authorisation to travel must be cancelled. A new authorisation to travel with expenses must be entered and approved by the persons concerned.",
+      "why": "an authorisation without expenses must be cancelled and replaced to cover costs"
+    },
+    {
+      "lines": [
+        191,
+        193
+      ],
+      "sha256": "3cae07343f4dafec675fb4e4814a7ed1b43d3ee7b1141838dcddcbcedd8e211f",
+      "quote": "Authorised travel is a travel away from the place of employment, undertaken by a staff member , both in the personal interest of the staff member and in the interests of the institution, with a link to their professional tasks. It is covered by an authorisation to travel. See Section 3.",
+      "why": "authorised travel: an outside event of personal and institutional interest"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "Authorised travel may be financed in none, part or full (lines 1085-1088), and the signed authorisation allows expenses only within its limits (lines 1199-1201). This one was signed without expenses; covering a cost would need it cancelled and a new one approved (lines 1210-1213), which nobody has asked for. The organisation buys no ticket."
+}

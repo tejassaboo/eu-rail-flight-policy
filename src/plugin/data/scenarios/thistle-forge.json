@@ -1,0 +1,177 @@
+{
+  "id": "thistle-forge",
+  "category": "hidden_clause",
+  "overlays": [
+    "multi_traveller",
+    "upgrade_not_taken",
+    "outside_air_section"
+  ],
+  "twin_of": "",
+  "twin_fact": "",
+  "flag_twins": [],
+  "ambiguity_note": "none",
+  "request": "Six of us from the interpretation DG are covering the UN meeting in New York, which starts the morning after we land. Please book my economy seat from Paris on 15 March.",
+  "trip": {
+    "traveller_name": "Elena Petrova",
+    "traveller_title": "Conference interpreter, interpretation DG",
+    "place_of_employment": "Paris",
+    "travel_kind": "MISSION",
+    "authorisation_pays_transport": false,
+    "journey": "OUTWARD",
+    "origin": "CDG",
+    "destination": "JFK",
+    "travel_date": "2027-03-15",
+    "booking_date": "2027-02-10",
+    "meeting_start_local": "2027-03-16 09:00",
+    "meeting_end_local": "",
+    "purpose": "Interpreting at a UN meeting in New York",
+    "event_role": "INTERPRETER",
+    "same_dg_participants": 6,
+    "requested_cabin": "ECONOMY",
+    "wants_refundable": false,
+    "risk_of_change": false,
+    "chosen_airline": "",
+    "avoids_unrequired_hours": false,
+    "accompanies": "NOBODY",
+    "accompanied_cabin": "NONE",
+    "rail_km": 0,
+    "rail_fare_cents": 0,
+    "rail_minutes": 0,
+    "air_justification": "",
+    "line_manager_is_authorising_officer": false,
+    "sign_offs": [
+      {
+        "role": "LINE_MANAGER",
+        "name": "Head of unit",
+        "subject": "MISSION_ORDER",
+        "note": "Mission order signed: purpose, dates and place of the mission"
+      },
+      {
+        "role": "AUTHORISING_OFFICER",
+        "name": "Authorising officer",
+        "subject": "MISSION_ORDER",
+        "note": "Mission order signed for the budget: the mission's cost estimate"
+      }
+    ]
+  },
+  "world": {
+    "searches": [
+      {
+        "name": "main",
+        "origin": "CDG",
+        "destination": "JFK",
+        "date": "2027-03-15",
+        "return_date": "",
+        "background": 0,
+        "flights": {
+          "airfrance": {
+            "carrier": "AF",
+            "depart": "10:30",
+            "minutes": [
+              445
+            ]
+          },
+          "american": {
+            "carrier": "AA",
+            "depart": "13:15",
+            "minutes": [
+              450
+            ]
+          }
+        },
+        "offers": [
+          {
+            "slot": "airfrance-economy",
+            "flight": "airfrance",
+            "cabin": "ECONOMY",
+            "fare_cents": 48800
+          },
+          {
+            "slot": "airfrance-premium",
+            "flight": "airfrance",
+            "cabin": "PREMIUM_ECONOMY",
+            "fare_cents": 98000
+          },
+          {
+            "slot": "airfrance-business",
+            "flight": "airfrance",
+            "cabin": "BUSINESS",
+            "fare_cents": 320000
+          },
+          {
+            "slot": "american-economy",
+            "flight": "american",
+            "cabin": "ECONOMY",
+            "fare_cents": 47100
+          },
+          {
+            "slot": "american-premium",
+            "flight": "american",
+            "cabin": "PREMIUM_ECONOMY",
+            "fare_cents": 101000
+          },
+          {
+            "slot": "american-business",
+            "flight": "american",
+            "cabin": "BUSINESS",
+            "fare_cents": 335000
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "decision": "BOOK",
+    "offer_slots": [
+      "american-economy"
+    ],
+    "cabins": [
+      "ECONOMY"
+    ],
+    "reason_codes": [
+      "LOWEST_FARE"
+    ],
+    "approvers": [
+      "AUTHORISING_OFFICER",
+      "LINE_MANAGER",
+      "NONE"
+    ],
+    "clauses": [
+      "SMART_ORGANISATION",
+      "TRANSPORT_BETWEEN_PLACES",
+      "TRAVEL_BY_AIR"
+    ],
+    "unclear_phrase": ""
+  },
+  "must_keep": [
+    {
+      "lines": [
+        364,
+        372
+      ],
+      "sha256": "936b96bb8c78739405105e6bff6f1d2249fddcb3925bfd295bea1a1718dc96f6",
+      "quote": "⎯ when physical presence is required , based on the interests of the service , the number of staff travelling to the same event should be limited to what is strictly necessary and be justified as follows: o when participation in a single meeting or event involves more than three staff members from the same Directorate-General, an authorisation at Director-General level is required (25). The Director-General, either on a case-by-case or general basis, may delegate this authorisation to senior management or to the HR Correspondent of the DG concerned or to another more appropriate entity of the DG concerned. It is up to each DG to define how to implement this authorisation;",
+      "why": "more than three staff of one DG at one meeting need a Director-General level authorisation, which may be delegated"
+    },
+    {
+      "lines": [
+        399,
+        400
+      ],
+      "sha256": "78b32e5c24b8a2743889af8b48a95f7f6b002cd8d15bb62355e09dbeed26b8bb",
+      "quote": "(25) This principle should not be applied when there are specific rules about the number of participants, such as is the case for interpreters.",
+      "why": "footnote 25: not where specific rules set the number, as for interpreters"
+    },
+    {
+      "lines": [
+        688,
+        691
+      ],
+      "sha256": "947ccf14ea092affcad4f3b3cd78ca7006d7c81eae32868db9ad7f83816c8686",
+      "quote": "As a general rule, you can book air travel: a) in economy class or equivalent, including cases where the ticket in question cannot be exchanged or refunded, at the lowest available rates, taking into account the times of meetings and/or special features of the mission;",
+      "why": "(a) economy, including non-refundable, at the lowest available rates"
+    }
+  ],
+  "distractors": [],
+  "design_notes": "Six staff of one DG at one meeting would need a Director-General level authorisation (lines 367-368), but footnote 25 (lines 399-400) sets that aside where specific rules fix the number of participants, as for interpreters. The flight would allow premium economy or business (lines 707-710), but the traveller asks for economy: the lowest fare, American at EUR 471."
+}
